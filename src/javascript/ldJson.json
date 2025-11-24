@@ -1,0 +1,13 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tijuana Innovadora",
+    "url": "https://www.tijuanainnovadora.org",
+    "logo": "https://www.tijuanainnovadora.com/src/assets/logos-organización/LogoTI-01.png",
+    "description": "Movimiento ciudadano que impulsa el arte, la ciencia, la tecnología y el desarrollo sostenible en Tijuana.",
+    "sameAs": [
+        "https://www.facebook.com/tijuanainnovadora",
+        "https://www.instagram.com/tijuanainnovadora",
+        "https://www.twitter.com/tijinnovadora"
+    ]
+}

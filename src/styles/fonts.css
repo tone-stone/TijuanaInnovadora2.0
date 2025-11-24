@@ -1,0 +1,63 @@
+/* Estilos globales */
+@font-face {
+    font-family: "Quicksand-Bold";
+    src: url("../assets/fonts/quicksand/Quicksand-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Quicksand-SemiBold";
+    src: url("../assets/fonts/quicksand/Quicksand-SemiBold.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "Quicksand-Medium";
+    src: url("../assets/fonts/quicksand/Quicksand-Medium.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("../assets/fonts/quicksand/Quicksand-Regular.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "Quicksand-Light";
+    src: url("../assets/fonts/quicksand/Quicksand-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Anton";
+    src: url("../assets/fonts/anton/Anton-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DM-Sans-Bold";
+    src: url("../assets/fonts/dm_sans/DMSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DM-Sans-SemiBold";
+    src: url("../assets/fonts/dm_sans/DMSans-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DM-Sans-Medium";
+    src: url("../assets/fonts/dm_sans/DMSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DM-Sans";
+    src: url("../assets/fonts/dm_sans/DMSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DM-Sans-Light";
+    src: url("../assets/fonts/dm_sans/DMSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DM-Sans-Thin";
+    src: url("../assets/fonts/dm_sans/DMSans-Thin.ttf") format("truetype");
+}

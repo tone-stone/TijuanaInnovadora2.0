@@ -12,10 +12,10 @@ function changeGallery(year) {
               <img loading="lazy" src="../src/assets/images/${year}.webp" class="rounded-xl shadow-xl object-cover w-full max-h-[500px]"/>
             </div>
             <div class="swiper-slide">
-              <img loading="lazy" src="../src/assets/images/${year}.webp" class="rounded-xl shadow-xl object-cover w-full max-h-[500px]"/>
+              <img loading="lazy" src="../src/assets/images/${year}-1.webp" class="rounded-xl shadow-xl object-cover w-full max-h-[500px]"/>
             </div>
             <div class="swiper-slide">
-              <img loading="lazy" src="../src/assets/images/${year}.webp" class="rounded-xl shadow-xl object-cover w-full max-h-[500px]"/>
+              <img loading="lazy" src="../src/assets/images/${year}-2.webp" class="rounded-xl shadow-xl object-cover w-full max-h-[500px]"/>
             </div>
           </div>
           <div class="swiper-pagination mt-4"></div>
@@ -40,38 +40,3 @@ function changeGallery(year) {
     }, 300);
 }
 
-// Inicializar el primer año
-window.onload = () => changeGallery(2010);
-
-function changeGallery(year) {
-    const gallery = document.getElementById("timeline-gallery");
-    gallery.style.opacity = 0;
-    setTimeout(() => {
-        gallery.innerHTML = `
-        <img loading="lazy" src="../src/assets/images/${year}.jpg" alt="Foto de ${year}" class="rounded-xl shadow-xl w-full max-h-[500px] object-cover mx-auto">
-      `;
-        gallery.style.opacity = 1;
-    }, 300);
-}
-
-function openModal({ img, title, desc, link }) {
-    document.getElementById("modal-img").src = img;
-    document.getElementById("modal-img").alt = title;
-    document.getElementById("modal-title").textContent = title;
-    document.getElementById("modal-desc").textContent = desc;
-    document.getElementById("modal-link").href = link;
-    document.getElementById("cta-modal").classList.remove("hidden");
-}
-
-// Cerrar modal con botón o click fondo
-document.getElementById("close-modal").onclick = function () {
-    document.getElementById("cta-modal").classList.add("hidden");
-};
-document.getElementById("cta-modal").onclick = function (e) {
-    if (e.target === this) this.classList.add("hidden");
-};
-// Cerrar con ESC
-document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape")
-        document.getElementById("cta-modal").classList.add("hidden");
-});

@@ -1,7 +1,5 @@
 (function () {
-    const html = document.documentElement;
-    const btnOpen = document.getElementById("btn-menu");
-    const btnClose = document.getElementById("btn-close");
+    const html = document.documentElement;  
     const overlay = document.getElementById("overlay");
     const panel = document.getElementById("mobile-menu");
     const iconOpen = document.getElementById("icon-open");
@@ -10,8 +8,7 @@
     const openMenu = () => {
         panel.classList.remove("translate-x-full");
         overlay.classList.remove("invisible");
-        requestAnimationFrame(() => overlay.classList.add("opacity-100"));
-        btnOpen.setAttribute("aria-expanded", "true");
+        requestAnimationFrame(() => overlay.classList.add("opacity-100")); 
         iconOpen.classList.add("hidden");
         iconClose.classList.remove("hidden");
         // bloquear scroll
@@ -25,20 +22,13 @@
             "transitionend",
             () => overlay.classList.add("invisible"),
             { once: true }
-        );
-        btnOpen.setAttribute("aria-expanded", "false");
+        ); 
         iconClose.classList.add("hidden");
         iconOpen.classList.remove("hidden");
         // habilitar scroll
         html.style.overflow = "";
     };
-
-    // Abrir / cerrar
-    btnOpen.addEventListener("click", () => {
-        const expanded = btnOpen.getAttribute("aria-expanded") === "true";
-        expanded ? closeMenu() : openMenu();
-    });
-    btnClose.addEventListener("click", closeMenu);
+  
     overlay.addEventListener("click", closeMenu);
 
     // Cerrar con ESC
@@ -51,6 +41,7 @@
         a.addEventListener("click", closeMenu);
     });
 })();
+
 document.addEventListener("DOMContentLoaded", () => {
     // Navbar scroll (usa #navbar solo si existe)
     const navbar = document.getElementById("navbar");
@@ -88,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Quitar inits de Swiper si no hay contenedores .heroSwiper/.portafolioSwiper
     // (ya lo haces con el check, bien)
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     const el = document.querySelector(".impactSwiper");
     if (el && typeof Swiper !== "undefined") {
@@ -112,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
 document.addEventListener("DOMContentLoaded", () => {
     const swiper = new Swiper(".patrocinadoresSwiper", {
         slidesPerView: 2,
@@ -142,6 +135,7 @@ function changeGallery(year) {
         gallery.style.opacity = 1;
     }, 300);
 }
+
 let swiper;
 
 function changeGallery(year) {
@@ -200,9 +194,11 @@ function openModal({ img, title, desc, link }) {
 document.getElementById("close-modal").onclick = function () {
     document.getElementById("cta-modal").classList.add("hidden");
 };
+
 document.getElementById("cta-modal").onclick = function (e) {
     if (e.target === this) this.classList.add("hidden");
 };
+
 // Cerrar con ESC
 document.addEventListener("keydown", function (e) {
     if (e.key === "Escape")

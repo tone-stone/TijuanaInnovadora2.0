@@ -546,7 +546,7 @@
 
                     <!-- Controles -->
                     <div class="flex items-center gap-3">
-                        <button
+                        <button type="button"
                             class="revistas-prev inline-flex items-center justify-center w-11 h-11 rounded-full bg-white border border-black/5 shadow hover:shadow-lg transition hover:-translate-y-0.5"
                             aria-label="Anterior">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -554,7 +554,7 @@
                                     stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <button
+                        <button type="button"
                             class="revistas-next inline-flex items-center justify-center w-11 h-11 rounded-full bg-white border border-black/5 shadow hover:shadow-lg transition hover:-translate-y-0.5"
                             aria-label="Siguiente">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -566,11 +566,11 @@
                 </div>
 
                 <!-- Swiper -->
-                <div class="swiper revistas-swiper">
+                <div class="swiper revistas-swiper" aria-label="Carrusel de revistas destacadas">
                     <div class="swiper-wrapper">
                         <!-- Slide -->
                         <article class="swiper-slide">
-                            <a href="" class="group block">
+                            <a href="#" class="group block" aria-label="Ver edición 2025: Transformación Urbana">
                                 <div
                                     class="relative rounded-xl overflow-hidden shadow-xl border border-[#01426A]/10 bg-white">
                                     <img loading="lazy"

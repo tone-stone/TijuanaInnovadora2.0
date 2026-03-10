@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Guía de Integración - Carrusel de Redes Sociales | Tijuana Innovadora</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../src/styles/fonts.css" />
+    <link rel="stylesheet" href="../../src/styles/global.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../src/javascript/tailwindcss.js"></script>
+
+    <style>
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        .code-highlight {
+            color: #4ec9b0;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #005daa 0%, #01426a 100%);
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            margin-right: 16px;
+        }
+    </style>
+
+    <link rel="icon" type="image/png"
+        href="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997590/CabezaTI_wil1lj_owiwti.png" />
+
+</head>
+
+<body class="bg-white text-gray-900 font-sans">
+    <main class="max-w-4xl mx-auto px-5 py-20 md:py-28">
+        <!-- Header -->
+        <section class="mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                📱 Guía de Integración
+            </h1>
+            <p class="text-xl text-gray-600">
+                Carrusel de Publicaciones de Redes Sociales para Tijuana Innovadora
+            </p>
+        </section>
+
+        <!-- Introducción -->
+        <section class="mb-12 p-6 bg-blue-50 rounded-lg border border-blue-200">
+            <h2 class="text-2xl font-bold mb-4">✨ ¿Qué es el Carrusel?</h2>
+            <p class="text-gray-700 mb-4">
+                Un componente moderno y responsivo que muestra publicaciones de Instagram y Facebook
+                directamente en tu sitio web. Perfecto para mantener el contenido actualizado y
+                aumentar el engagement con tus seguidores.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>✅ Diseño adaptado a Tijuana Innovadora</li>
+                <li>✅ Completamente responsivo (móvil, tablet, desktop)</li>
+                <li>✅ Fácil de personalizar</li>
+                <li>✅ Compatible con APIs reales de redes sociales</li>
+                <li>✅ Animaciones suaves y profesionales</li>
+            </ul>
+        </section>
+
+        <!-- Instalación Rápida -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="step-number">1</span>
+                Instalación Rápida (5 minutos)
+            </h2>
+
+            <div class="space-y-8">
+                <!-- Paso 1 -->
+                <div class="border-l-4 border-blue-600 pl-6">
+                    <h3 class="text-xl font-bold mb-3">Copiar los archivos</h3>
+                    <p class="text-gray-700 mb-4">Ya están creados en tu proyecto:</p>
+                    <pre><code>src/
+├── javascript/
+│   ├── social-carousel.js          (Carrusel simple)
+│   ├── social-carousel-manager.js  (Versión avanzada)
+│   └── social-carousel-examples.js (Ejemplos)
+└── styles/
+    └── social-carousel.css         (Estilos)</code></pre>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="border-l-4 border-blue-600 pl-6">
+                    <h3 class="text-xl font-bold mb-3">Agrega los enlaces en el HEAD</h3>
+                    <p class="text-gray-700 mb-4">En tu archivo HTML:</p>
+                    <pre><code>&lt;!-- En el &lt;head&gt; --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /&gt;
+&lt;link rel="stylesheet" href="./src/styles/social-carousel.css" /&gt;
+
+&lt;!-- Antes del cierre &lt;/body&gt; --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"&gt;&lt;/script&gt;
+&lt;script src="./src/javascript/social-carousel.js"&gt;&lt;/script&gt;</code></pre>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="border-l-4 border-blue-600 pl-6">
+                    <h3 class="text-xl font-bold mb-3">Agrega el HTML del carrusel</h3>
+                    <p class="text-gray-700 mb-4">En el lugar donde quieras mostrar el carrusel:</p>
+                    <pre><code>&lt;section class="py-20 bg-gray-50"&gt;
+    &lt;div class="max-w-7xl mx-auto px-5"&gt;
+        
+        &lt;h2 class="text-4xl font-bold mb-12 text-center"&gt;Síguenos&lt;/h2&gt;
+
+        &lt;div class="relative group"&gt;
+            &lt;div class="social-carousel swiper"&gt;
+                &lt;div class="social-wrapper swiper-wrapper"&gt;&lt;/div&gt;
+                &lt;div class="social-pagination swiper-pagination"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Botones de navegación --&gt;
+            &lt;button class="social-prev absolute -left-16 top-1/2"&gt;
+                &lt;i class="fas fa-chevron-left"&gt;&lt;/i&gt;
+            &lt;/button&gt;
+            &lt;button class="social-next absolute -right-16 top-1/2"&gt;
+                &lt;i class="fas fa-chevron-right"&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Uso Básico -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="step-number">2</span>
+                Uso con Datos de Ejemplo
+            </h2>
+
+            <p class="text-gray-700 mb-6">
+                El carrusel ya viene con datos de ejemplo. Solo copia el HTML anterior y ¡listo!
+                Se mostrará automáticamente.
+            </p>
+
+            <p class="text-gray-700 mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                ✅ <strong>Nota:</strong> Los datos de ejemplo se cargan automáticamente desde
+                <code>social-carousel.js</code>
+            </p>
+        </section>
+
+        <!-- Datos Personalizados -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="step-number">3</span>
+                Personalizar con tus Datos
+            </h2>
+
+            <div class="space-y-8">
+                <div class="border-l-4 border-blue-600 pl-6">
+                    <h3 class="text-xl font-bold mb-4">Opción A: Datos Estáticos</h3>
+                    <p class="text-gray-700 mb-4">
+                        Edita el archivo <code>src/javascript/social-carousel.js</code>
+                        y reemplaza el array <code>socialPosts</code>:
+                    </p>
+                    <pre><code>const socialPosts = [
+    {
+        id: 1,
+        platform: "instagram",              // o "facebook"
+        author: "Tu Nombre",
+        avatar: "url-avatar.jpg",
+        image: "url-publicacion.jpg",
+        caption: "Tu texto aquí",
+        likes: 150,
+        comments: 20,
+        timestamp: "hace 2 días",
+        url: "link-a-publicacion.com"
+    },
+    // ... más publicaciones
+];</code></pre>
+                </div>
+
+                <div class="border-l-4 border-green-600 pl-6">
+                    <h3 class="text-xl font-bold mb-4">Opción B: API de Instagram</h3>
+                    <p class="text-gray-700 mb-4">
+                        Usa el manejador avanzado para cargar datos llamando a la API:
+                    </p>
+                    <pre><code>&lt;script src="./src/javascript/social-carousel-manager.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    document.addEventListener("DOMContentLoaded", async function() {
+        const carousel = new SocialCarouselManager();
+        
+        await carousel.loadInstagramPosts(
+            "TU_INSTAGRAM_TOKEN",
+            "TU_INSTAGRAM_USER_ID"
+        );
+    });
+&lt;/script&gt;</code></pre>
+                </div>
+
+                <div class="border-l-4 border-purple-600 pl-6">
+                    <h3 class="text-xl font-bold mb-4">Opción C: Múltiples Plataformas</h3>
+                    <p class="text-gray-700 mb-4">
+                        Cargar Instagram y Facebook simultáneamente:
+                    </p>
+                    <pre><code>&lt;script&gt;
+    document.addEventListener("DOMContentLoaded", async function() {
+        const carousel = new SocialCarouselManager();
+        
+        await carousel.loadFromMultiplePlatforms(
+            {
+                token: "INSTAGRAM_TOKEN",
+                userId: "INSTAGRAM_USER_ID"
+            },
+            {
+                token: "FACEBOOK_TOKEN",
+                pageId: "FACEBOOK_PAGE_ID"
+            }
+        );
+    });
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Obtener Tokens -->
+        <section class="mb-16 p-6 bg-yellow-50 rounded-lg border border-yellow-200">
+            <h2 class="text-2xl font-bold mb-4">🔑 Obtener Tokens de API</h2>
+
+            <div class="space-y-6">
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Instagram Graph API</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                        <li>Ve a <a href="https://developers.facebook.com/" target="_blank"
+                                class="text-blue-600 underline">developers.facebook.com</a></li>
+                        <li>Crea una aplicación (o usa una existente)</li>
+                        <li>Agrega el producto "Instagram Graph API"</li>
+                        <li>Obtén tu token de acceso en Configuración → Tokens</li>
+                        <li>Necesitarás una cuenta de negocio en Instagram</li>
+                    </ol>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Facebook Graph API</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                        <li>Ve a <a href="https://developers.facebook.com/" target="_blank"
+                                class="text-blue-600 underline">developers.facebook.com</a></li>
+                        <li>Crea una aplicación</li>
+                        <li>Ve a Configuración → Básica para obtener tu ID de página</li>
+                        <li>Genera un token en Configuración → Tokens → Token de Página</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personalización de Estilos -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="step-number">4</span>
+                Personalizar Estilos
+            </h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-blue-600 pl-6">
+                    <h3 class="text-xl font-bold mb-3">Cambiar Velocidad del Carrusel</h3>
+                    <p class="text-gray-700 mb-4">En <code>social-carousel.js</code>:</p>
+                    <pre><code>autoplay: {
+    delay: 5000,  // Cambiar a 3000 para 3 segundos
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+},</code></pre>
+                </div>
+
+                <div class="border-l-4 border-blue-600 pl-6">
+                    <h3 class="text-xl font-bold mb-3">Cambiar Cantidad de Tarjetas Visibles</h3>
+                    <p class="text-gray-700 mb-4">En <code>social-carousel.js</code>:</p>
+                    <pre><code>breakpoints: {
+    640: { slidesPerView: 1.5 },      // Móvil
+    768: { slidesPerView: 2.1 },      // Tablet
+    1024: { slidesPerView: 3 },       // Desktop
+},</code></pre>
+                </div>
+
+                <div class="border-l-4 border-blue-600 pl-6">
+                    <h3 class="text-xl font-bold mb-3">Personalizar Colores</h3>
+                    <p class="text-gray-700 mb-4">En <code>social-carousel.css</code>:</p>
+                    <pre><code>:root {
+    --swiper-pagination-color: #005daa;  /* Color de puntos */
+    --swiper-pagination-bullet-size: 10px;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejemplos de Uso -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8">📚 Ejemplos Completos</h2>
+
+            <p class="text-gray-700 mb-6">
+                Ve el archivo <a href="../../src/javascript/social-carousel-examples.js"
+                    class="text-blue-600 underline">
+                    social-carousel-examples.js
+                </a> para ver más ejemplos avanzados como:
+            </p>
+
+            <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-3">✓</span>
+                    <span>Carrusel con filtros por plataforma</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-3">✓</span>
+                    <span>Caché de datos en localStorage</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-3">✓</span>
+                    <span>Actualización automática cada X minutos</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-3">✓</span>
+                    <span>Estadísticas y analytics</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-3">✓</span>
+                    <span>Múltiples instancias en una página</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Solución de Problemas -->
+        <section class="mb-16 p-6 bg-red-50 rounded-lg border border-red-200">
+            <h2 class="text-2xl font-bold mb-6">🐛 Solución de Problemas</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-red-600 pl-6">
+                    <h3 class="font-bold mb-2">El carrusel no aparece</h3>
+                    <p class="text-gray-700">
+                        Verifica que: Swiper.js esté cargado, el HTML tenga los IDs correctos
+                        (<code>social-carousel</code>, <code>social-wrapper</code>), y los scripts
+                        estén en el orden correcto.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-red-600 pl-6">
+                    <h3 class="font-bold mb-2">Las imágenes no cargan</h3>
+                    <p class="text-gray-700">
+                        Las URLs deben ser públicas y accesibles. Si usas imágenes de Cloudinary o
+                        similar, asegúrate de que la URL sea correcta.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-red-600 pl-6">
+                    <h3 class="font-bold mb-2">La API retorna 401 (no autorizado)</h3>
+                    <p class="text-gray-700">
+                        El token es incorrecto o ha expirado. Genera uno nuevo desde el panel de
+                        desarrolladores de Facebook.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section class="text-center py-12 border-t-2 border-gray-200">
+            <h2 class="text-2xl font-bold mb-4">¿Necesitas ayuda?</h2>
+            <p class="text-gray-600 mb-6">
+                Consulta la documentación completa o contacta al equipo de desarrollo
+            </p>
+            <a href="../../SOCIAL_CAROUSEL_README.md" target="_blank"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                <i class="fas fa-book"></i>
+                Documentación Completa
+            </a>
+        </section>
+    </main>
+
+    <script src="../../src/javascript/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+
+</body>
+
+</html>

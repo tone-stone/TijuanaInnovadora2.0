@@ -1,6 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const el = document.querySelector(".impactSwiper");
-    if (el && typeof Swiper !== "undefined") {
+    if (typeof Swiper === "undefined") return;
+
+    // Carrusel del Banner Principal
+    const bannerEl = document.querySelector(".banner-swiper");
+    if (bannerEl) {
+        new Swiper(".banner-swiper", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".banner-swiper .swiper-pagination",
+                clickable: true,
+            },
+            speed: 800,
+        });
+    }
+
+    // Carrusel de Impacto (existente)
+    const impactEl = document.querySelector(".impactSwiper");
+    if (impactEl) {
         new Swiper(".impactSwiper", {
             slidesPerView: 1.15,
             spaceBetween: 30,

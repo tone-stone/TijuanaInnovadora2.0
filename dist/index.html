@@ -61,6 +61,8 @@
     <link rel="stylesheet" href="./src/styles/social-carousel.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./src/javascript/tailwindcss.js"></script>
+    <!-- Swiper Carousel Script -->
+    <script defer src="./src/javascript/swiper-carousel.js"></script>
     <!-- Favicon -->
     <link rel="icon" type="image/png"
         href="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997590/CabezaTI_wil1lj_owiwti.png" />
@@ -69,12 +71,33 @@
 <body class="bg-white text-gray-900 font-sans">
     <main id="contenido">
 
-        <!--Inicio Menu y Banner-->
-        <section class="relative h-screen w-full bg-cover bg-center flex items-center justify-center" style="
-                    background-image: url('./src/assets/images/Convocatoria\ InnovaModa\ 2026\ \(6\).png');
-                ">
-            <!-- Overlay gradiente con efecto más editorial -->
-            <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90"></div>
+        <!--Inicio Menu y Carrusel Banner-->
+        <section class="relative h-screen w-full overflow-hidden" id="banner-carousel">
+            <!-- Carrusel con Swiper -->
+            <div class="banner-swiper swiper h-full w-full">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide h-screen w-full">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./src/assets/images/Convocatoria\ InnovaModa\ 2026\ \(6\).png');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90"></div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide h-screen w-full">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./src/assets/images/PRÓXIMAMENTE.png');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90"></div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide h-screen w-full">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./src/assets/images/Próximamente\ Diplomado\ \(1\).png');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90"></div>
+                    </div>
+                </div>
+                
+                <!-- Puntos de paginación -->
+                <div class="swiper-pagination"></div>
+            </div>
 
             <header id="navbar"
                 class="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black/80 via-black/60 to-transparent backdrop-blur-lg transition-shadow shadow-lg">

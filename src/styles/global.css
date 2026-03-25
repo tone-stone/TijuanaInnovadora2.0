@@ -293,3 +293,24 @@ img {
     border-radius: 6px;
     opacity: 1;
 }
+
+/* Mobile-friendly banner: show full images (contain) and avoid crop-heavy cover */
+@media (max-width: 767px) {
+    #banner-carousel,
+    .banner-swiper,
+    .banner-swiper .swiper-slide {
+        min-height: 70vh;
+        height: auto;
+    }
+
+    .banner-swiper .swiper-slide > div {
+        background-size: contain !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+    }
+
+    .banner-swiper .swiper-slide > div::before {
+        content: "";
+        /* preserve overlay same opacity when image has letterbox space */
+    }
+}

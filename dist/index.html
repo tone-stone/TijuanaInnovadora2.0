@@ -71,83 +71,124 @@
 <body class="bg-white text-gray-900 font-sans">
     <main id="contenido">
 
-        <!--Inicio Menu y Carrusel Banner-->
-        <section class="relative h-screen w-full overflow-hidden" id="banner-carousel">
-            <!-- Carrusel con Swiper -->
+
+        <!-- ====== Inicio Menu y Carrusel Banner (OPTIMIZADO) ====== -->
+        <section class="relative h-[80svh] md:h-[95svh] lg:h-[100svh] w-full overflow-hidden" id="banner-carousel">
+
+            <!-- Swiper -->
             <div class="banner-swiper swiper h-full w-full">
                 <div class="swiper-wrapper">
-                     <!-- Slide 0 -->
-                    <div class="swiper-slide h-screen w-full">
-                        <div class="absolute inset-0 bg-cover bg-center"  style="background-image: url('https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997587/InicioBanner_gzjsvv_yazof7.webp');"></div>
-                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90"></div>
-                        <!-- Contenido central tipo portada de revista -->
-                        <div id="#home"
-                            class="relative z-10 h-full flex flex-col justify-center items-start w-full mdpl-0 md:max-w-3xl lg:max-w-6xl text-white px-5 md:px-6 mx-auto">
-                            <!-- Badge animado -->
-                            <span
-                                class="mb-1 inline-block text-lg md:text-2xl tracking-[0.3em] font-dm-sans-bold uppercase text-white shadow-md animate-fade-in-up">
+
+                    <!-- ===== SLIDE 1 ===== -->
+                    <div class="swiper-slide relative h-[80svh] md:h-[95svh] lg:h-[100svh] w-full">
+
+                        <!-- Imagen responsive -->
+                        <picture>
+                            <!-- Desktop -->
+                            <source media="(min-width: 768px)"
+                                srcset="https://res.cloudinary.com/dxxtlfbb4/image/upload/w_1920,h_1080,c_fill/InicioBanner_gzjsvv_yazof7.webp">
+
+                            <!-- Mobile -->
+                            <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/w_768,h_1280,c_fill/InicioBanner_gzjsvv_yazof7.webp"
+                                alt="Tijuana Innovadora" class="absolute inset-0 w-full h-full object-cover">
+                        </picture>
+
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90">
+                        </div>
+
+                        <!-- Contenido -->
+                        <div
+                            class="relative z-10 h-full flex flex-col justify-center items-start w-full max-w-6xl mx-auto px-5 md:px-6 text-white">
+
+                            <span class="mb-1 text-base md:text-2xl tracking-[0.3em] font-dm-sans-bold uppercase">
                                 TIJUANA INNOVADORA
                             </span>
 
-                            <!-- Headline con subrayado animado -->
-                            <h1 class="font-anton mb-4 drop-shadow-xl relative text-6xl md:text-8xl leading-tight max-w-3xl animate-fade-in-up"
-                                data-aos="fade-right">
+                            <h1 class="font-anton mb-4 text-4xl md:text-8xl leading-tight max-w-3xl">
                                 SOMOS UN <br />
-                                <span class="text-white relative z-10 text-6xl font-anton md:text-8xl block -mt-1">
+                                <span class="block relative">
                                     MOVIMIENTO
                                     <span
-                                        class="absolute left-0 bottom-0 w-full h-3 bg-gradient-to-r from-[#C49E4F]/50 to-[#005DAA]/60 rounded-xl blur-[3px] -z-10 animate-pulse"></span>
+                                        class="absolute left-0 bottom-0 w-full h-3 bg-gradient-to-r from-[#C49E4F]/50 to-[#005DAA]/60 blur-[3px] -z-10"></span>
                                 </span>
                             </h1>
 
-                            <!-- Texto principal -->
-                            <p class="text-lg md:text-xl font-medium text-white mb-8 max-w-[40ch] animate-fade-in-up">
-                                Imagina una iniciativa que logró transformar una ciudad y convertirse en un movimiento ciudadano con
-                                presencia
-                                global. <br />Esa es
-                                <span class="font-bold md:font-bold text-highlight text-lg md:text-xl">Tijuana Innovadora</span>.
+                            <p class="text-base md:text-xl max-w-[40ch] mb-6">
+                                Imagina una iniciativa que logró transformar una ciudad y convertirse en un movimiento
+                                global.
                             </p>
 
-                            <!-- Botón + Redes sociales -->
-                            <div class="flex flex-col md:flex-row md:items-center gap-5 animate-fade-in-up delay-150">
+                            <div class="flex flex-col md:flex-row md:items-center gap-5">
                                 <a href="/quienes-somos"
-                                    class="bg-white/90 text-[#005DAA] px-7 py-3 rounded-full font-quicksand-bold text-base shadow-lg hover:bg-gray-200 transition scale-100 hover:scale-105 duration-300 border border-[#005DAA]/10 focus:ring-4 focus:ring-accent/30 animate-bounce-slow">
+                                    class="bg-white text-[#005DAA] px-6 py-3 rounded-full font-bold shadow hover:scale-105 transition">
                                     Más información
                                 </a>
-                                <div class="flex items-center gap-4 text-2xl">
+
+                                <div class="flex gap-4 text-2xl">
                                     <a href="https://www.facebook.com/TjInnovadora/"
-                                        class="hover:text-[#C49E4F] transition duration-300 animate-fade-in-up delay-200 block w-6 md:w-8 h-6 md:h-8 grid place-content-center"><i
-                                            class="fab fa-facebook-f text-3xl"></i></a>
+                                        class="hover:text-[#C49E4F] transition"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://www.instagram.com/tjinnovadora/"
-                                        class="hover:text-[#C49E4F] transition duration-300 animate-fade-in-up delay-200 block w-6 md:w-8 h-6 md:h-8 grid place-content-center"><i
-                                            class="fab fa-instagram text-3xl"></i></a>
+                                        class="hover:text-[#C49E4F] transition"><i class="fab fa-instagram"></i></a>
                                     <a href="mailto:info@tijuanainnovadora.com"
-                                        class="hover:text-[#C49E4F] transition duration-300 animate-fade-in-up delay-200 block w-6 md:w-8 h-6 md:h-8 grid place-content-center"><i
-                                            class="fas fa-envelope text-3xl"></i></a>
+                                        class="hover:text-[#C49E4F] transition"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
+
                         </div>
                     </div>
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide h-screen w-full">
-                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://res.cloudinary.com/db1xdn8rq/image/upload/v1774436043/modaBanner_i8nfzg.webp');"></div>
-                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90"></div>
+
+                    <!-- ===== SLIDE 2 ===== -->
+                    <div class="swiper-slide relative h-[80svh] md:h-[95svh] lg:h-[100svh] w-full">
+                        <picture>
+                            <source media="(min-width: 768px)"
+                                srcset="https://res.cloudinary.com/db1xdn8rq/image/upload/w_1920,h_1080,c_fill/1_innovamoda_escritoiro_nadqxg.webp">
+                            <img src="https://res.cloudinary.com/db1xdn8rq/image/upload//w_768,h_1280,c_fill/1_innovamoda_movil_iyvgrz.svg"
+                                class="absolute inset-0 w-full h-full object-cover object-[center_80%]">
+                        </picture>
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90">
+                        </div>
                     </div>
-                    
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide h-screen w-full">
-                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://res.cloudinary.com/db1xdn8rq/image/upload/v1774436042/famaBanner_g72nzq.webp');"></div>
-                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90"></div>
+
+                    <!-- ===== SLIDE 3 ===== -->
+                    <div class="swiper-slide relative h-[80svh] md:h-[95svh] lg:h-[100svh] w-full">
+                        <picture>
+                            <source media="(min-width: 768px)"
+                                srcset="https://res.cloudinary.com/db1xdn8rq/image/upload/w_1920,h_1080,c_fill/2_casa_de_las_ideas_-_escritoiro_an1e2c.webp">
+                            <img src="https://res.cloudinary.com/db1xdn8rq/image/upload/v1777532579/2_casa_de_las_ideas_-_movil_elbqlr.svg"
+                                class="absolute inset-0 w-full h-full object-cover object-[center_80%]">
+                        </picture>
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90">
+                        </div>
                     </div>
-                    
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide h-screen w-full">
-                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://res.cloudinary.com/db1xdn8rq/image/upload/v1774436043/liderBanner_pjdkeo.webp');"></div>
-                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90"></div>
+
+                    <!-- ===== SLIDE 4 ===== -->
+                    <div class="swiper-slide relative h-[80svh] md:h-[95svh] lg:h-[100svh] w-full">
+                        <picture>
+                            <source media="(min-width: 768px)"
+                                srcset="https://res.cloudinary.com/db1xdn8rq/image/upload/w_1920,h_1080,c_fill/5_feria_ambiental_-_escritorio_ib3wgh.webp">
+                            <img src="https://res.cloudinary.com/db1xdn8rq/image/upload/v1777532580/5_feria_ambiental_-_movivl_tnxb3m.svg"
+                                class="absolute inset-0 w-full h-full object-cover object-[center_80%]">
+                        </picture>
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90">
+                        </div>
                     </div>
+
+                    <!-- ===== SLIDE 5 ===== -->
+                    <div class="swiper-slide relative h-[80svh] md:h-[95svh] lg:h-[100svh] w-full">
+                        <picture>
+                            <source media="(min-width: 768px)"
+                                srcset="https://res.cloudinary.com/db1xdn8rq/image/upload/w_1920,h_1080,c_fill/7_Sinfonica_-_escritorio_rt3f2c.webp">
+                            <img src="https://res.cloudinary.com/db1xdn8rq/image/upload/v1777532578/7_sinfonica_-_movivl_cgsoak.svg"
+                                class="absolute inset-0 w-full h-full object-cover object-[center_80%]">
+                        </picture>
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#01426A]/20 to-black/90">
+                        </div>
+                    </div>
+
                 </div>
-                
-                <!-- Puntos de paginación -->
+
+                <!-- Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
 
@@ -400,7 +441,7 @@
                     <span class="font-bold md:font-bold text-highlight text-lg md:text-xl">Tijuana Innovadora</span>.
                 </p> -->
 
-                <!-- Botón + Redes sociales 
+            <!-- Botón + Redes sociales 
                 <div class="flex flex-col md:flex-row md:items-center gap-5 animate-fade-in-up delay-150">
                     <a href="/quienes-somos"
                         class="bg-white/90 text-[#005DAA] px-7 py-3 rounded-full font-quicksand-bold text-base shadow-lg hover:bg-gray-200 transition scale-100 hover:scale-105 duration-300 border border-[#005DAA]/10 focus:ring-4 focus:ring-accent/30 animate-bounce-slow">
@@ -425,8 +466,9 @@
         <section class="py-12 bg-white text-gray-800" data-aos="fade-up">
             <div class="max-w-4xl mx-auto px-5 ">
                 <h1 class="hidden md:block text-3xl md:text-4xl leading-[1.3] mb-6 bg-gradient-to-r from-[#C49E4F] via-[#005DAA] to-[#C49E4F] bg-clip-text text-transparent animate-gradient-x drop-shadow-lg shadow-accent font-quicksand-bold text-center"
-                    data-aos="fade-left" >Bienvenidos a Tijuana Innovadora</h1>
-                <p  class="text-gray-700/90 leading-thin mb-4 animate-fade-in-up font-quicksand-regular text-lg justify-center">
+                    data-aos="fade-left">Bienvenidos a Tijuana Innovadora</h1>
+                <p
+                    class="text-gray-700/90 leading-thin mb-4 animate-fade-in-up font-quicksand-regular text-lg justify-center">
                     Somos un movimiento ciudadano que impulsa proyectos de arte, ciencia y tecnología para
                     generar impacto social en la región fronteriza de Tijuana. A través de iniciativas como
                     Tijuana Verde, InnovaModa y la Sinfónica Juvenil, buscamos conectar a la comunidad y
@@ -610,6 +652,42 @@
                         <span
                             class="absolute w-full h-full rounded-full border border-accent animate-ping opacity-0 group-hover:opacity-20"></span>
                     </div>
+
+                    <!-- Tarjeta dinámica -->
+                    <div onclick="openModal({
+                                img: './src/assets/images/Comuna CreatIva.jpeg',
+                                title: 'Comuna Creativa',
+                                desc: 'Concentrando, vinculando y proyectando el talento local en áreas como el arte, el cine, los videojuegos y el diseño.',
+                                link: '../esferas-proyectos/comuna-creativa'})"
+                        class="border border-[2px] border-white relative w-36 h-36 lg:w-64 lg:h-64 bg-white rounded-full shadow-2xl overflow-hidden cursor-pointer flex items-center justify-center text-center group transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:scale-110 animate-float-slow"
+                        data-aos="zoom-in">
+                        <!-- Brillo animado -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-50 transition duration-500 pointer-events-none rounded-full">
+                        </div>
+
+                        <!-- Círculo interior con animación -->
+                        <img loading="lazy" src="./src/assets/images/Comuna CreatIva.jpeg" alt="Arte en la Industria"
+                            class="w-full h-full object-cover rounded-full shadow-lg transition-transform duration-500 group-hover:scale-110" />
+
+                        <!-- Overlay con texto -->
+                        <div
+                            class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full">
+
+                            <h3 class="text-white font-bold text-sm md:text-lg">
+                                Comuna Creativa
+                            </h3>
+
+                            <p class="text-gray-200 text-xs md:text-sm mt-1">
+                                Impulsando las industrias creativas en la región.
+                            </p>
+                        </div>
+
+                        <!-- Efecto de onda al hacer hover -->
+                        <span
+                            class="absolute w-full h-full rounded-full border border-accent animate-ping opacity-0 group-hover:opacity-20"></span>
+                    </div>
+
 
                     <!-- Tarjeta dinámica -->
                     <div onclick="openModal({
@@ -797,7 +875,7 @@
             </div>
         </section>
 
-         <!-- Sección de Publicaciones en Redes Sociales 
+        <!-- Sección de Publicaciones en Redes Sociales 
         <section class="bg-gradient-to-br from-primary via-[#01426A]/80 to-[#C49E4F]/30 py-20 relative overflow-hidden"
             id="social-section">
             <div class="max-w-7xl mx-auto px-5 md:px-8">
@@ -916,16 +994,16 @@
                                     class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#C49E4F] via-[#005DAA] to-[#C49E4F] text-white px-5 py-1 rounded-full text-xs font-quicksand-bold shadow-lg tracking-widest animate-wiggle">
                                     LIDERES
                                 </span>
-                                <img loading="lazy"
-                                    src="./src/assets/images/noticias/insta1.png"
-                                    alt="Arte y Cultura"
+                                <img loading="lazy" src="./src/assets/images/noticias/insta1.png" alt="Arte y Cultura"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-[#C49E4F]/30 group-hover:scale-105 group-hover:rotate-2 transition-all duration-300" />
                                 <h4
                                     class="font-quicksand-bold text-xl text-center text-[#005DAA] mb-2 group-hover:text-accent transition">
                                     Diplomado en Fortalecimiento del Liderazgo
                                 </h4>
                                 <p class="text-gray-700 text-base text-center mb-4">
-                                    El liderazgo comienza cuando decides creer en tu capacidad de transformar tu entorno. Cada paso que das hacia tu preparación fortalece tu voz, tu visión y tu compromiso con la comunidad.
+                                    El liderazgo comienza cuando decides creer en tu capacidad de transformar tu
+                                    entorno. Cada paso que das hacia tu preparación fortalece tu voz, tu visión y tu
+                                    compromiso con la comunidad.
 
                                 </p>
                                 <!-- Enlace externo visual -->
@@ -944,19 +1022,19 @@
                                     class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#005DAA] to-[#C49E4F] text-white px-5 py-1 rounded-full text-xs font-quicksand-bold shadow-lg tracking-widest animate-wiggle">
                                     MODA
                                 </span>
-                                <img loading="lazy"
-                                    src="./src/assets/images/noticias/insta2.png"
+                                <img loading="lazy" src="./src/assets/images/noticias/insta2.png"
                                     alt="Ciencia y Tecnología"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-primary/30 group-hover:scale-105 group-hover:rotate-1 transition-all duration-300" />
                                 <h4
                                     class="font-quicksand-bold text-xl text-[#005DAA] mb-2 group-hover:text-accent transition text-center">
-                                     InnovaModa abre su convocatoria para participar en el Concurso de Diseñadores
+                                    InnovaModa abre su convocatoria para participar en el Concurso de Diseñadores
                                 </h4>
                                 <p class="text-gray-700 text-base text-center mb-4">
-                                Un programa que impulsa el talento emergente a través de un circuito educativo enfocado en creatividad, identidad de marca y profesionalización dentro de la industria de la moda.
+                                    Un programa que impulsa el talento emergente a través de un circuito educativo
+                                    enfocado en creatividad, identidad de marca y profesionalización dentro de la
+                                    industria de la moda.
                                 </p>
-                                <a href="https://www.instagram.com/p/DVuC0c0EuAz/"
-                                    target="_blank" rel="noopener"
+                                <a href="https://www.instagram.com/p/DVuC0c0EuAz/" target="_blank" rel="noopener"
                                     class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/90 hover:bg-primary text-white font-quicksand-bold shadow-lg transition-all duration-300 scale-100 hover:scale-105 animate-bounce-slow group-hover:ring-2 group-hover:ring-primary/30">
                                     <i class="fa-brands fa-instagram"></i>
                                     Ver en Instagram
@@ -971,8 +1049,7 @@
                                     class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#C49E4F] via-[#005DAA] to-[#C49E4F] text-white px-5 py-1 rounded-full text-xs font-quicksand-bold shadow-lg tracking-widest animate-wiggle">
                                     PASEO DE LA FAMA
                                 </span>
-                                <img loading="lazy"
-                                    src="./src/assets/images/noticias/insta3.png"
+                                <img loading="lazy" src="./src/assets/images/noticias/insta3.png"
                                     alt="Responsabilidad Social"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-[#C49E4F]/30 group-hover:scale-105 group-hover:-rotate-2 transition-all duration-300" />
                                 <h4
@@ -980,7 +1057,9 @@
                                     Tijuana continúa consolidándose como un referente internacional en turismo de salud.
                                 </h4>
                                 <p class="text-gray-700 text-base text-center mb-4">
-                                    El Paseo de la Fama reconocerá a las personalidades que han contribuido a posicionar a Tijuana como un epicentro de excelencia médica, innovación y liderazgo en bienestar. 
+                                    El Paseo de la Fama reconocerá a las personalidades que han contribuido a posicionar
+                                    a Tijuana como un epicentro de excelencia médica, innovación y liderazgo en
+                                    bienestar.
                                 </p>
                                 <a href="https://www.instagram.com/p/DVy3V6FEejG/" target="_blank" rel="noopener"
                                     class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/90 hover:bg-accent text-white font-quicksand-bold shadow-lg transition-all duration-300 scale-100 hover:scale-105 animate-bounce-slow group-hover:ring-2 group-hover:ring-accent/30">
@@ -1007,10 +1086,13 @@
                                     Nos honra haber sido invitados al Foro @soymujeractual
                                 </h4>
                                 <p class="text-gray-700 text-base text-center mb-4">
-                                    Un espacio que celebra el liderazgo, la dedicación y la fuerza de quienes construyen una mejor región, también se reconoció la trayectoria de nuestros personajes galardonados del Paseo de la Fama 2025.
+                                    Un espacio que celebra el liderazgo, la dedicación y la fuerza de quienes construyen
+                                    una mejor región, también se reconoció la trayectoria de nuestros personajes
+                                    galardonados del Paseo de la Fama 2025.
                                 </p>
                                 <!-- Enlace externo visual -->
-                                <a href="https://www.facebook.com/photo/?fbid=1374680431365335&set=pcb.1374680501365328&locale=es_LA" target="_blank" rel="noopener"
+                                <a href="https://www.facebook.com/photo/?fbid=1374680431365335&set=pcb.1374680501365328&locale=es_LA"
+                                    target="_blank" rel="noopener"
                                     class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/90 hover:bg-accent text-white font-quicksand-bold shadow-lg transition-all duration-300 scale-100 hover:scale-105 animate-bounce-slow group-hover:ring-2 group-hover:ring-accent/30">
                                     <i class="fa-brands fa-facebook-messenger"></i>
                                     Ver en Facebook
@@ -1034,7 +1116,9 @@
                                     ¿Buscas disciplina, creatividad y confianza?
                                 </h4>
                                 <p class="text-gray-700 text-base text-center mb-4">
-                                   En la Sinfónica, cada clase es una oportunidad para que niñas, niños y jóvenes desarrollen disciplina, fortalezcan su autoestima y descubran de lo que son capaces.<br>
+                                    En la Sinfónica, cada clase es una oportunidad para que niñas, niños y jóvenes
+                                    desarrollen disciplina, fortalezcan su autoestima y descubran de lo que son
+                                    capaces.<br>
 
                                 </p>
                                 <!-- Enlace externo visual -->
@@ -1165,10 +1249,11 @@
                                 Convocatoria 2026
                             </h4>
                             <p class="font-normal text-gray-900 mb-3 dark:text-gray-400">
-                                InnovaModa profesionaliza tu talento a través de un Ciclo Educativo diseñado para consolidar tu marca y llevar tu colección a plataformas nacionales.
+                                InnovaModa profesionaliza tu talento a través de un Ciclo Educativo diseñado para
+                                consolidar tu marca y llevar tu colección a plataformas nacionales.
                             </p>
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6KPkS5DQwlkBHY1iTQ3ojSmNtZ2JxDPcrGyrjFkC91NZ7Wg/viewform?embedded=true&pli=1"
-                                 target="_blank" rel="noopener"
+                                target="_blank" rel="noopener"
                                 class="inline-flex justify-center items-center gap-2 px-8 py-2 rounded-full bg-primary/90 hover:bg-primary text-white font-semibold shadow-lg transition-all duration-300 scale-100 hover:scale-105 focus:ring-2 ring-accent/40">
                                 <i class="fa-solid fa-calendar-check"></i>
                                 Ver detalles
@@ -1192,7 +1277,8 @@
                                 Sinfonica Juvenil
                             </h4>
                             <p class="font-normal text-gray-900 mb-3 dark:text-gray-400">
-                                Si quieres que tu hijo crezca en un espacio seguro, formativo y lleno de inspiración, la Sinfónica es su lugar.
+                                Si quieres que tu hijo crezca en un espacio seguro, formativo y lleno de inspiración, la
+                                Sinfónica es su lugar.
                             </p>
                             <a href="./eventos"
                                 class="inline-flex justify-center items-center gap-2 px-8 py-2 rounded-full bg-primary/90 hover:bg-primary text-white font-semibold shadow-lg transition-all duration-300 scale-100 hover:scale-105 focus:ring-2 ring-accent/40">
@@ -1205,7 +1291,7 @@
             </div>
         </section>
 
-         <!-- Participa - Sección Voluntariado Creativa y Diferente -->
+        <!-- Participa - Sección Voluntariado Creativa y Diferente -->
         <section class="py-20 bg-gradient-to-bl from-[#F4F4F4] via-[#ECF3F9] to-[#F7EFE2] relative overflow-hidden">
             <div class="sm:max-w-lg md:max-w-5xl lg:max-w-6xl mx-auto px-4 md:px-6 relative z-10">
                 <div
@@ -1228,7 +1314,8 @@
                     <div
                         class="max-w-sm mx-auto bg-white/90 rounded-xl shadow-xl border border-accent/10 group hover:-translate-y-2 transition-all duration-300 animate-fade-left p-5 flex flex-col items-center md:min-h-[330px] lg:min-h-[300px]">
                         <a href="mailto:rigo.dominguez@tijuanainnovadora.com" target="_blank">
-                            <i class="fa-solid fa-hand-holding-dollar text-4xl text-[#C49E4F] mb-3 animate-bounce-slow"></i>
+                            <i
+                                class="fa-solid fa-hand-holding-dollar text-4xl text-[#C49E4F] mb-3 animate-bounce-slow"></i>
                         </a>
                         <h4 class="font-quicksand-bold text-xl mb-3 text-accent">Donante</h4>
                         <p class="text-gray-600 text-base font-quicksand-regular lg:text-lg text-center">
@@ -1273,7 +1360,8 @@
                         </a>
                         <h4 class="font-quicksand-bold text-xl mb-3 text-primary">Voluntariado</h4>
                         <p class="text-gray-600 text-base font-quicksand-regular lg:text-lg text-center">
-                            Únete a iniciativas, actividades comunitarias y acciones que generan un impacto positivo en nuestra comunidad. ¡Tus manos transforman realidades!
+                            Únete a iniciativas, actividades comunitarias y acciones que generan un impacto positivo en
+                            nuestra comunidad. ¡Tus manos transforman realidades!
                         </p>
                     </div>
 
@@ -1285,7 +1373,8 @@
                         </a>
                         <h4 class="font-quicksand-bold text-xl mb-3 text-accent">Servicio Social</h4>
                         <p class="text-gray-600 text-base font-quicksand-regular lg:text-lg text-center">
-                            Cumple tu servicio social comunitario y profesional en proyectos con impacto social, horarios flexibles y un entorno que impulsa tu crecimiento personal y profesional.
+                            Cumple tu servicio social comunitario y profesional en proyectos con impacto social,
+                            horarios flexibles y un entorno que impulsa tu crecimiento personal y profesional.
                         </p>
                     </div>
 
@@ -1297,7 +1386,8 @@
                         </a>
                         <h4 class="font-quicksand-bold text-xl mb-3 text-primary">Practicas Profesionales</h4>
                         <p class="text-gray-600 text-base font-quicksand-regular lg:text-lg text-center">
-                            Aplica tus conocimientos universitarios generando propuestas de valor, mientras adquieres experiencia profesional
+                            Aplica tus conocimientos universitarios generando propuestas de valor, mientras adquieres
+                            experiencia profesional
                         </p>
                     </div>
                 </div>
@@ -1392,7 +1482,7 @@
             </div>
         </section> -->
 
-         <!-- SECCIÓN BIENVENIDA TIJUANA INNOVADORA CON VIDEO-->
+        <!-- SECCIÓN BIENVENIDA TIJUANA INNOVADORA CON VIDEO-->
         <section class="relative bg-gradient-to-br from-[#f4f4f4] via-[#f9fafb] to-[#e5e7eb] overflow-hidden py-20">
             <div class="relative z-10 mx-auto px-4 md:px-6 sm:max-w-lg md:max-w-3xl lg:max-w-6xl">
                 <div class="max-w-6xl">
@@ -1503,8 +1593,7 @@
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
                         <div class="swiper-slide flex justify-center items-center transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/01 - fimubac.png"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/01 - fimubac.png"
                                 alt="Patrocinador 1" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 2 -->
@@ -1517,72 +1606,62 @@
                         <!-- Slide 3 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/03 Baja Creativa.jpg"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/03 Baja Creativa.jpg"
                                 alt="Patrocinador 3" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Agrega más slides aquí -->
                         <!-- Slide 1 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/04 Fundacion Coppel.jpg"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/04 Fundacion Coppel.jpg"
                                 alt="Patrocinador 1" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 2 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/05 Porticus.png"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/05 Porticus.png"
                                 alt="Patrocinador 2" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 3 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/06 coca_cola.jpg"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/06 coca_cola.jpg"
                                 alt="Patrocinador 3" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 1 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/07 Carls Jr.png"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/07 Carls Jr.png"
                                 alt="Patrocinador 1" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 2 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/08 Cortadito Cafe.png"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/08 Cortadito Cafe.png"
                                 alt="Patrocinador 2" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 3 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/09 La Torta Plaza.png"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/09 La Torta Plaza.png"
                                 alt="Patrocinador 3" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 1 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/10 Dip Evelyn Sanchez.png"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/10 Dip Evelyn Sanchez.png"
                                 alt="Patrocinador 1" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 2 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/11 ABC Aluminium Soltions.png"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/11 ABC Aluminium Soltions.png"
                                 alt="Patrocinador 2" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 3 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Patrocinadores/13 Grupo Logix.png"
+                            <img loading="lazy" src="./src/assets/images/Patrocinadores/13 Grupo Logix.png"
                                 alt="Patrocinador 3" class="w-32 h-32 object-contain" />
                         </div>
                     </div>
@@ -1591,94 +1670,82 @@
                 <!-- Título -->
                 <h3
                     class="text-left text-3xl md:text-4xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-[#005DAA] via-[#C49E4F] to-[#005DAA] bg-clip-text text-transparent animate-gradient-x text-center">
-                    Nuestros Aliados 
+                    Nuestros Aliados
                 </h3>
-               
+
                 <!-- Swiper Carousel 2 -->
                 <div class="swiper patrocinadoresSwiper">
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
                         <div class="swiper-slide flex justify-center items-center transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/01 - Logo CCE.jpg"
-                                alt="Patrocinador 1" class="w-32 h-32 object-contain" />
+                            <img loading="lazy" src="./src/assets/images/Aliados/01 - Logo CCE.jpg" alt="Patrocinador 1"
+                                class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 2 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/02 - Logo-cdt.png"
-                                alt="Patrocinador 2" class="w-32 h-32 object-contain" />
+                            <img loading="lazy" src="./src/assets/images/Aliados/02 - Logo-cdt.png" alt="Patrocinador 2"
+                                class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 3 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/03 - Logo Cuatro Comunicacion.png"
+                            <img loading="lazy" src="./src/assets/images/Aliados/03 - Logo Cuatro Comunicacion.png"
                                 alt="Patrocinador 3" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Agrega más slides aquí -->
                         <!-- Slide 1 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/04 - TV Azteca Baja California.jpg"
+                            <img loading="lazy" src="./src/assets/images/Aliados/04 - TV Azteca Baja California.jpg"
                                 alt="Patrocinador 1" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 2 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/05 Campestre.png"
-                                alt="Patrocinador 2" class="w-32 h-32 object-contain" />
+                            <img loading="lazy" src="./src/assets/images/Aliados/05 Campestre.png" alt="Patrocinador 2"
+                                class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 3 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/07 - Ciudad tijuana.png"
+                            <img loading="lazy" src="./src/assets/images/Aliados/07 - Ciudad tijuana.png"
                                 alt="Patrocinador 3" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 1 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/08 - Logo Frontera.jpg"
+                            <img loading="lazy" src="./src/assets/images/Aliados/08 - Logo Frontera.jpg"
                                 alt="Patrocinador 1" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 2 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/09 - Mujer Actual.png"
+                            <img loading="lazy" src="./src/assets/images/Aliados/09 - Mujer Actual.png"
                                 alt="Patrocinador 2" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 3 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/10 Logo Xolos.png"
-                                alt="Patrocinador 3" class="w-32 h-32 object-contain" />
+                            <img loading="lazy" src="./src/assets/images/Aliados/10 Logo Xolos.png" alt="Patrocinador 3"
+                                class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 1 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/11 logo-zonkeys.png"
+                            <img loading="lazy" src="./src/assets/images/Aliados/11 logo-zonkeys.png"
                                 alt="Patrocinador 1" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 2 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/12 Logo Toros de Tijuana.jpg"
+                            <img loading="lazy" src="./src/assets/images/Aliados/12 Logo Toros de Tijuana.jpg"
                                 alt="Patrocinador 2" class="w-32 h-32 object-contain" />
                         </div>
                         <!-- Slide 3 -->
                         <div
                             class="swiper-slide flex justify-center items-center hover:grayscale-0 transition duration-500">
-                            <img loading="lazy"
-                                src="./src/assets/images/Aliados/13 - Logo Modiart.png"
+                            <img loading="lazy" src="./src/assets/images/Aliados/13 - Logo Modiart.png"
                                 alt="Patrocinador 3" class="w-32 h-32 object-contain" />
                         </div>
                     </div>
@@ -1900,6 +1967,24 @@
         duration: 800,
         easing: "ease-in-out-cubic",
         once: true,
+    });
+</script>
+
+<script>
+    new Swiper('.banner-swiper', {
+        loop: true,
+        speed: 900,
+        grabCursor: true,
+
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
     });
 </script>
 

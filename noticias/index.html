@@ -12,6 +12,14 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.tijuanainnovadora.org/noticias/" />
 
+    <!-- Preconexión CDN (primero para abrir conexiones antes de descargar) -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -30,17 +38,6 @@
     <!-- SwiperJS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Preconexión CDN -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link rel="preconnect" href="https://unpkg.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
-
-    <!-- Preload Hero -->
-    <link rel="preload" as="image"
-        href="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997587/InicioBanner_gzjsvv_yazof7.webp"
-        imagesrcset="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997587/InicioBanner_gzjsvv_yazof7.webp"
-        imagesizes="100vw" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Tijuana Innovadora | Movimiento ciudadano con impacto global" />
@@ -394,7 +391,7 @@
                                 </div>
                                 <!-- Imagen principal -->
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/noticias/Nota Arte 01 Principal.JPG"
+                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Arte 01 Principal.JPG"
                                         alt="Inauguración muestra de Arte en la Industria en NewCity Medical"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
@@ -448,25 +445,25 @@
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Arte 01 Principal.JPG" alt="Foto 2"
+                                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Arte 01 Principal.JPG" alt="Foto 2"
                                                         class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Arte 02.JPG" alt="Foto 1"
+                                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Arte 02.JPG" alt="Foto 1"
                                                         class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Arte 03.JPG" alt="Foto 2"
+                                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Arte 03.JPG" alt="Foto 2"
                                                         class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Arte 04.JPG" alt="Foto 3"
+                                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Arte 04.JPG" alt="Foto 3"
                                                         class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
@@ -499,7 +496,7 @@
                                 </div>
                                 <!-- Imagen principal -->
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/noticias/Nota Sinfonica 01 Principal.JPG"
+                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Sinfonica 01 Principal.JPG"
                                         alt="Sinfónica Juvenil en el CECUT"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
@@ -544,19 +541,19 @@
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Sinfonica 02.JPG"
+                                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Sinfonica 02.JPG"
                                                         alt="Foto 1" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Sinfonica 03.JPG"
+                                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Sinfonica 03.JPG"
                                                         alt="Foto 2" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Arte 01 Principal.JPG"
+                                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Arte 01 Principal.JPG"
                                                         alt="Foto 3" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
@@ -588,7 +585,7 @@
                                 </div>
                                 <!-- Imagen principal -->
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/noticias/Nota Premio 01 Principal.jpeg"
+                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Premio 01 Principal.jpeg"
                                         alt="Embajada de Suiza premia a Iniciativa Río Tijuana"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
@@ -641,19 +638,19 @@
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Premio 02.jpeg"
+                                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Premio 02.jpeg"
                                                         alt="Foto 1" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Premio 03.jpeg"
+                                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Premio 03.jpeg"
                                                         alt="Foto 2" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Premio 04.jpeg"
+                                                    <img loading="lazy" src="/src/assets/images/noticias/Nota Premio 04.jpeg"
                                                         alt="Foto 3" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
@@ -684,7 +681,7 @@
                                 </div>
                                 <!-- Imagen principal -->
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/noticias/WhatsApp Image 2026-03-10 at 3.23.59 PM.webp"
+                                    <img loading="lazy" src="/src/assets/images/noticias/WhatsApp Image 2026-03-10 at 3.23.59 PM.webp"
                                         alt="Paseo de la Fama"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
@@ -749,7 +746,7 @@
                                         California</p>
                                 </div>
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/NOTICIA1.JPG" alt="Paseo de la Fama"
+                                    <img loading="lazy" src="/src/assets/images/NOTICIA1.JPG" alt="Paseo de la Fama"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
                                 <div
@@ -789,7 +786,7 @@
                                         California</p>
                                 </div>
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/NOTICIA2.JPG" alt="Paseo de la Fama"
+                                    <img loading="lazy" src="/src/assets/images/NOTICIA2.JPG" alt="Paseo de la Fama"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
                                 <div
@@ -829,7 +826,7 @@
                                         California</p>
                                 </div>
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/noticia3.jpg" alt="Paseo de la Fama"
+                                    <img loading="lazy" src="/src/assets/images/noticia3.jpg" alt="Paseo de la Fama"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
                                 <div
@@ -868,7 +865,7 @@
                                         California</p>
                                 </div>
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/noticia3.jpg" alt="Paseo de la Fama"
+                                    <img loading="lazy" src="/src/assets/images/noticia3.jpg" alt="Paseo de la Fama"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
                                 <div

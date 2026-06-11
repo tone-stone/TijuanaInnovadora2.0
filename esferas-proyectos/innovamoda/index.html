@@ -13,6 +13,19 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.tijuanainnovadora.org/" />
 
+    <!-- Preconexión CDN (primero para abrir conexiones antes de descargar) -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+
+    <!-- Preload Hero InnovaModa (imagen de fondo del banner) -->
+    <link rel="preload" as="image"
+        href="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997587/innovamoda_xw7hq8_rcwnnw.webp"
+        imagesizes="100vw" />
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,23 +36,12 @@
 
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="../../src/javascript/aos.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+    <script src="../../src/javascript/aos.js" defer type="text/javascript"></script>
 
     <!-- SwiperJS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Preconexión CDN -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link rel="preconnect" href="https://unpkg.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
-
-    <!-- Preload Hero -->
-    <link rel="preload" as="image"
-        href="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997587/InicioBanner_gzjsvv_yazof7.webp"
-        imagesrcset="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997587/InicioBanner_gzjsvv_yazof7.webp"
-        imagesizes="100vw" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
     <!-- Open Graph -->
     <meta property="og:title" content="Tijuana Innovadora | Movimiento ciudadano con impacto global" />
@@ -283,12 +285,12 @@
             </header>
 
             <!-- Video de fondo  -->
-
-            <iframe class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto 
-          -translate-x-1/2 -translate-y-1/2 object-cover z-0 block"
-                src="https://player.cloudinary.com/embed/?cloud_name=db1xdn8rq&public_id=Innovamoda-FashionRevolution_2025_V-Master_u1nz5v&autoplay=true&muted=true&loop=true"
-                allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen frameborder="0">
-            </iframe>
+            <video
+                class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover z-0"
+                autoplay muted loop playsinline
+                poster="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997587/innovamoda_xw7hq8_rcwnnw.webp">
+                <source src="https://res.cloudinary.com/db1xdn8rq/video/upload/Innovamoda-FashionRevolution_2025_V-Master_u1nz5v.mp4" type="video/mp4">
+            </video>
 
 
             <!-- Contenido central tipo portada de revista -->
@@ -933,7 +935,8 @@
                             <template x-for="(foto, fIndex) in galeria.fotos" :key="fIndex">
                                 <div class="group relative overflow-hidden rounded-xl shadow-lg bg-white cursor-pointer"
                                     @click="abrirGaleria(galeria.fotos, fIndex)">
-                                    <img :src="foto.src"
+                                    <img :src="foto.src.replace('/upload/', '/upload/w_600,q_auto,f_auto/')"
+                                        loading="lazy"
                                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                                     <div
                                         class="absolute inset-0 bg-blue-900/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
@@ -1577,7 +1580,7 @@
                 </p>
 
                 <!-- Swiper Carrusel -->
-                <div class="swiper impactSwiper">
+                <div class="swiper impactSwiper relative overflow-hidden">
                     <div class="swiper-wrapper">
                         <!-- Slide ejemplo (repite para más noticias) -->
                         <div class="swiper-slide group">
@@ -2321,26 +2324,23 @@
 
     </main>
     <script>
-        new Swiper('.revistas-swiper', {
-            loop: true,
-            grabCursor: true,
-            simulateTouch: true,
-
-            slidesPerView: 1,
-            spaceBetween: 24,
-
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-
-            navigation: {
-                nextEl: '.revistas-next',
-                prevEl: '.revistas-prev',
-            },
-
+        document.addEventListener('DOMContentLoaded', function () {
+            new Swiper('.revistas-swiper', {
+                loop: true,
+                grabCursor: true,
+                simulateTouch: true,
+                slidesPerView: 1,
+                spaceBetween: 24,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.revistas-next',
+                    prevEl: '.revistas-prev',
+                },
+            });
         });
-
     </script>
 
     <script>
@@ -2364,13 +2364,13 @@
         }
     </script>
 
+    <script src="../../src/javascript/esferas.js" defer></script>
+    <script src="../../src/javascript/menu-navigation.js" defer></script>
+    <script src="../../src/javascript/modal.js" defer></script>
+    <script src="../../src/javascript/navigation.js" defer></script>
+    <script src="../../src/javascript/patrocinadores.js" defer></script>
+    <script src="../../src/javascript/swiper-carousel.js" defer></script>
 </body>
-<script src="../../src/javascript/esferas.js" type="text/javascript"></script>
-<script src="../../src/javascript/menu-navigation.js" type="text/javascript"></script>
-<script src="../../src/javascript/modal.js" type="text/javascript"></script>
-<script src="../../src/javascript/navigation.js" type="text/javascript"></script>
-<script src="../../src/javascript/patrocinadores.js" type="text/javascript"></script>
-<script src="../../src/javascript/swiper-carousel.js" type="text/javascript"></script>
 <!-- ===================================================== -->
 <!--            CONTROLADOR DE GALERÍA (ALPINE)            -->
 <!-- ===================================================== -->

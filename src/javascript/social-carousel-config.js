@@ -187,7 +187,6 @@ window.SOCIAL_LINKS = {
  */
 window.updateConfig = function(newConfig) {
     Object.assign(window.CAROUSEL_CONFIG, newConfig);
-    console.log("Configuración actualizada:", window.CAROUSEL_CONFIG);
 };
 
 /**
@@ -196,7 +195,6 @@ window.updateConfig = function(newConfig) {
  */
 window.updatePosts = function(newPosts) {
     window.SOCIAL_POSTS_CONFIG = newPosts;
-    console.log("Publicaciones actualizadas:", window.SOCIAL_POSTS_CONFIG);
     
     // Reiniciar carrusel si está disponible
     if (window.SocialCarouselManager) {
@@ -211,7 +209,6 @@ window.updatePosts = function(newPosts) {
  */
 window.addPost = function(post) {
     window.SOCIAL_POSTS_CONFIG.push(post);
-    console.log("Publicación agregada:", post);
 };
 
 /**
@@ -219,7 +216,6 @@ window.addPost = function(post) {
  */
 window.clearSocialCache = function() {
     localStorage.removeItem(window.CACHE_CONFIG.key);
-    console.log("Caché limpiado");
 };
 
 /**
@@ -252,7 +248,3 @@ window.getSocialStats = function() {
     return stats;
 };
 
-// Loguear configuración inicial cuando el script se carga
-console.log("Social Media Carousel Config Loaded");
-console.log("Publicaciones:", window.SOCIAL_POSTS_CONFIG.length);
-console.log("Config:", window.CAROUSEL_CONFIG);

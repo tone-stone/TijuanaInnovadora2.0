@@ -82,12 +82,35 @@
         Header set Cache-Control "public, max-age=2592000"
     </FilesMatch>
 
-    # Seguridad básica
+    # -----------------------------------------------
+    # SEGURIDAD: headers recomendados por Lighthouse
+    # -----------------------------------------------
+
+    # Evita que el browser adivine el tipo MIME
     Header always set X-Content-Type-Options "nosniff"
+
+    # Solo permite embeber esta página en iframes del mismo origen
     Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Controla qué información de referencia se envía
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
-    # Permite cargar recursos de Cloudinary (CORS para fuentes/imágenes)
+    # HSTS: fuerza HTTPS por 1 año (actívalo solo si tienes SSL activo en HostGator)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # COOP: aísla el contexto de navegación para proteger contra ataques de ventana emergente
+    # "same-origin-allow-popups" permite que Google Forms y redes sociales abran en popup
+    Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+
+    # Permissions Policy: desactiva APIs del browser que el sitio no usa
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # CSP: política de seguridad de contenido
+    # Permite inline scripts/styles porque el sitio usa Tailwind CDN y Alpine.js inline
+    # frame-src incluye youtube-nocookie.com (ya cambiado) y Google Forms
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data: https: blob:; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://docs.google.com https://player.cloudinary.com; font-src 'self' data: https://cdnjs.cloudflare.com https://unpkg.com; connect-src 'self' https://res.cloudinary.com; media-src 'self' https://res.cloudinary.com blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://docs.google.com; upgrade-insecure-requests;"
+
+    # CORS: permite cargar recursos de Cloudinary
     Header set Access-Control-Allow-Origin "*"
 </IfModule>
 

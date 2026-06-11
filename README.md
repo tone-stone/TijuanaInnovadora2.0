@@ -1,92 +1,143 @@
-# Proyecto Tijuana Innovadora
+# Proyecto Tijuana Innovadora 2.0
 
-Este repositorio contiene el código estático del sitio web de **Tijuana Innovadora**, un movimiento ciudadano que promueve el arte, la ciencia, la tecnología y el liderazgo en la región fronteriza de Tijuana, México.
+Sitio web estático de **Tijuana Innovadora**, movimiento ciudadano que promueve el arte, la ciencia, la tecnología y el liderazgo en la región fronteriza de Tijuana, México.
 
-## 🧱 Estructura del proyecto
-
-```
-TijuanaInnovadora2.0/
-├─ index.html                    # Página principal
-├─ publicaciones/                # Página de carrusel de redes sociales
-├─ esferas-proyectos/            # Subsitios por esfera (arte-industria, casa-ideas, etc.)
-├─ eventos/                      # Página de eventos
-├─ noticias/                     # Página de noticias
-├─ participa/                    # Página de participación
-├─ quienes-somos/                # Página "Quiénes somos"
-├─ contacto/                     # Página de contacto
-├─ src/                          # Recursos compartidos
-│   ├─ assets/                   # Imágenes, fonts, revistas
-│   ├─ javascript/               # Scripts de interacción
-│   └─ styles/                   # CSS personalizados
-├─ sitemap.xml                   # Mapa del sitio para buscadores
-└─ robots.txt                    # Directivas para crawlers
-```
-
-## 🚀 Inicio rápido
-
-1. Clona el repositorio en tu servidor local (MAMP, Apache, etc.).
-2. Asegúrate de que el directorio raíz (`TijuanaInnovadora2.0`) sea accesible via HTTP.
-3. Navega a `http://localhost/TijuanaInnovadora2.0/` para ver la página principal.
-
-> El sitio es completamente estático; no requiere base de datos ni backend adicional.
-
-## 🔧 Herramientas y dependencias
-
-- **Tailwind CSS** (via CDN) para utilidades de diseño.
-- **Swiper.js** para carruseles interactivos.
-- **AOS** (Animate On Scroll) para animaciones de aparición.
-- **Font Awesome**, **Animate.css** y **Alpine.js** en algunas páginas.
-- Scripts custom en `src/javascript` tales como `menu-navigation.js`, `social-carousel.js`, etc.
-- **Cloudinary** se usa para alojar imágenes optimizadas.
-
-## 📦 Desarrollo y personalización
-
-### Carrusel de redes sociales
-Se agregó un componente reutilizable con soporte para APIs de Instagram y Facebook. Los archivos clave son:
-- `src/javascript/social-carousel.js` (lógica básica)
-- `src/javascript/social-carousel-manager.js` (gestión avanzada, APIs, caché)
-- `src/styles/social-carousel.css` (estilos personalizados)
-- `publicaciones/index.html` (ejemplo completo)
-
-Consulta `SOCIAL_CAROUSEL_README.md` e `INTEGRACION_CARRUSEL.html` para instrucciones detalladas.
-
-### Configuraciones globales
-- Variables de color en `src/styles/global.css`.
-- Menú y comportamiento móvil en `src/javascript/menu-navigation.js`.
-
-### SEO y performance
-Se aplicaron mejoras como:
-- Metadatos personalizados por página.
-- Contenido introductorios y footer de enlaces internos.
-- Archivo `sitemap.xml` y `robots.txt` preparados.
-- Carga diferida (`defer`) de scripts y optimización de imágenes `loading="lazy"`.
-- Ejemplo de JSON‑LD `Event` en `eventos/index.html`.
-
-## 📁 Archivos importantes adicionales
-
-- `SOCIAL_CAROUSEL_README.md` – documentación del carrusel social.
-- `INTEGRACION_CARRUSEL.html` – guía paso a paso para integrarlo.
-- `INICIO_RAPIDO_CARRUSEL.html` – demo interactiva.
-- `src/javascript/*examples.js` – ejemplos de uso del componente social.
-
-## ✅ Buenas prácticas
-
-- Mantén actualizadas las metadescripciones y encabezados H1/H2.
-- Usa URLs canónicas correctas para cada página.
-- Añade `alt` descriptivos en todas las imágenes.
-- Usa el sitemap para subir a Search Console.
-- Vigila PageSpeed Insights y aplica optimizaciones adicionales si es necesario.
-
-## 📝 Información adicional
-
-- El proyecto no incluye un proceso de build; para producción puedes minificar manualmente CSS/JS o implementar un workflow con Gulp/webpack.
-- La mayoría de los recursos se cargan desde CDN; puedes cambiarlo a locales si prefieres.
-- Para integrar APIs (Instagram/Facebook) necesitas tokens válidos y cuentas de negocio.
-
-## 📡 Contacto
-
-Para coordinar cambios o colaboraciones, ponte en contacto con el equipo a través de la sección de **Contacto** del sitio o envía un correo a `info@tijuanainnovadora.com`.
+**Hosting:** HostGator (shared hosting PHP + Apache) · **Admin:** cPanel · **Deploy:** GitHub
 
 ---
 
-_Documento generado automáticamente el 2 de marzo de 2026._
+## Estructura del proyecto
+
+```
+TijuanaInnovadora2.0/
+├─ index.html                        # Página principal
+├─ .htaccess                         # Compresión, caché, headers de seguridad
+├─ sitemap.xml                       # Mapa del sitio para buscadores
+├─ robots.txt                        # Directivas para crawlers
+├─ quienes-somos/
+├─ eventos/
+├─ noticias/
+├─ participa/
+├─ contacto/
+├─ publicaciones/                    # Carrusel de redes sociales
+├─ esferas-proyectos/
+│   ├─ arte-industria/
+│   ├─ casa-ideas/
+│   ├─ innovamoda/
+│   ├─ lideres/
+│   ├─ paseo-fama/
+│   ├─ sinfonica-juvenil/
+│   └─ tijuana-verde/
+└─ src/
+    ├─ assets/                       # Imágenes locales, fuentes, PDFs de revistas
+    ├─ javascript/                   # Scripts de interacción
+    └─ styles/                       # CSS globales y de fuentes
+```
+
+---
+
+## Inicio rápido (local)
+
+1. Clona el repositorio dentro del directorio raíz de MAMP/Apache.
+2. Accede a `http://localhost/TijuanaInnovadora2.0/`.
+3. No requiere base de datos ni proceso de build.
+
+---
+
+## Dependencias (CDN)
+
+| Librería | Uso |
+|---|---|
+| Tailwind CSS (Play CDN) | Utilidades de diseño |
+| Swiper.js 11 | Carruseles |
+| AOS 2.3.4 | Animaciones al hacer scroll |
+| Alpine.js 3 | Reactividad ligera (galerías, lightbox) |
+| Font Awesome 6.5 | Iconos |
+| Animate.css 4.1 | Clases de animación CSS |
+
+> Los scripts de AOS y Swiper se cargan con `defer` para no bloquear el renderizado inicial.
+
+---
+
+## Imágenes y video
+
+- Las imágenes del sitio se alojan en **Cloudinary** (cuentas `dxxtlfbb4` y `db1xdn8rq`).
+- Las URLs incluyen transformaciones automáticas: `w_600,q_auto,f_auto` para miniaturas de galerías.
+- Los videos de banner usan la etiqueta `<video>` nativa con `autoplay muted loop playsinline`.
+- Las imágenes locales en `src/assets/images/noticias/` son archivos de cámara sin comprimir; se recomienda subirlos a Cloudinary antes de agregar nuevas notas.
+
+---
+
+## Performance
+
+Optimizaciones aplicadas en todas las páginas:
+
+- `loading="lazy"` en todas las imágenes fuera del viewport inicial.
+- `defer` en AOS, Swiper y todos los scripts externos del `<head>`.
+- `<link rel="preconnect">` declarado al inicio del `<head>` para Cloudinary, CDNs y Tailwind.
+- Preload del hero image correcto en cada página.
+- `.htaccess` configurado con:
+  - Compresión Gzip (HTML, CSS, JS, fuentes, SVG)
+  - Caché del browser: imágenes/fuentes 1 año · CSS/JS 1 semana · HTML 1 hora
+  - Keep-Alive activo
+
+---
+
+## SEO
+
+- Metadescripciones, Open Graph y Twitter Cards en cada página.
+- `aria-label` en todos los vínculos de iconos (redes sociales, correo).
+- `alt` descriptivo en todas las imágenes.
+- JSON-LD estructurado en `eventos/index.html`.
+- `sitemap.xml` y `robots.txt` listos para Google Search Console.
+- URLs canónicas configuradas por página.
+
+---
+
+## Seguridad (headers HTTP via `.htaccess`)
+
+| Header | Valor |
+|---|---|
+| `Strict-Transport-Security` | `max-age=31536000; includeSubDomains; preload` |
+| `Content-Security-Policy` | Lista blanca de CDNs, Cloudinary, YouTube nocookie y Google Forms |
+| `Cross-Origin-Opener-Policy` | `same-origin-allow-popups` |
+| `X-Content-Type-Options` | `nosniff` |
+| `X-Frame-Options` | `SAMEORIGIN` |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` |
+| `Permissions-Policy` | Desactiva cámara, micrófono, geolocalización y pagos |
+
+Los embeds de YouTube usan `youtube-nocookie.com` para reducir cookies de terceros.
+
+---
+
+## Carrusel de redes sociales
+
+Componente reutilizable con soporte para APIs de Instagram y Facebook.
+
+Archivos clave:
+- `src/javascript/social-carousel.js` — lógica principal
+- `src/javascript/social-carousel-manager.js` — APIs, caché
+- `src/javascript/social-carousel-config.js` — configuración de posts
+- `src/styles/social-carousel.css` — estilos
+- `publicaciones/index.html` — implementación completa
+
+Documentación extendida: `SOCIAL_CAROUSEL_README.md` · `INTEGRACION_CARRUSEL.html`
+
+---
+
+## Pendientes recomendados
+
+- [ ] Subir imágenes de noticias locales (`.JPG` de cámara) a Cloudinary y actualizar rutas.
+- [ ] Compilar Tailwind CSS localmente y reemplazar el Play CDN por un archivo estático — mejora significativa de rendimiento.
+- [ ] Implementar `trustedTypes` para eliminar el uso de `innerHTML` en los carruseles sociales.
+- [ ] Reemplazar el iframe de Google Forms con un botón que lo cargue bajo demanda para eliminar las 2 cookies de terceros restantes.
+
+---
+
+## Contacto
+
+`info@tijuanainnovadora.com` · [tijuanainnovadora.org](https://www.tijuanainnovadora.org)
+
+---
+
+_Actualizado: junio 2026_

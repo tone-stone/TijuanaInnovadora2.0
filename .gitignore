@@ -1,1 +1,4 @@
 node_modules/
+_critical-content.html
+tailwind-critical.config.js
+src/styles/tailwind-critical.css

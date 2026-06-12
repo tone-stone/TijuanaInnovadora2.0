@@ -31,7 +31,12 @@
     </script>
 
     <!-- SwiperJS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .swiper{overflow:hidden}
+        .swiper-wrapper{display:flex;width:100%;height:100%}
+        .swiper-slide{flex-shrink:0;width:100%;height:100%;position:relative}
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Preconexión CDN -->
@@ -60,9 +65,9 @@
     <meta name="twitter:image" content="https://www.tijuanainnovadora.com/src/assets/images/og-cover.jpg" />
 
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="../src/styles/fonts.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="../src/styles/global.css" />
-    <link rel="stylesheet" href="../src/styles/tailwind.css" />
+    <link rel="stylesheet" href="../src/styles/fonts.css?v=20260612" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="../src/styles/global.css?v=20260612" />
+    <link rel="stylesheet" href="../src/styles/tailwind.css?v=20260612" />
     <!-- Favicon -->
     <link rel="icon" type="image/png"
         href="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997590/CabezaTI_wil1lj_owiwti.png" />
@@ -1100,11 +1105,11 @@
 
 <!-- Scripts -->
 <!-- Script del menú -->
-<script src="../src/javascript/navigation.js" type="text/javascript"></script>
-<script src="../src/javascript/menu-navigation.js" type="text/javascript"></script>
-<script src="../src/javascript/esferas.js" type="text/javascript"></script>
-<script src="../src/javascript/swiper-carousel.js" type="text/javascript"></script>
-<script src="../src/javascript/patrocinadores.js" type="text/javascript"></script>
+<script src="../src/javascript/navigation.js?v=20260612" type="text/javascript"></script>
+<script src="../src/javascript/menu-navigation.js?v=20260612" type="text/javascript"></script>
+<script src="../src/javascript/esferas.js?v=20260612" type="text/javascript"></script>
+<script src="../src/javascript/swiper-carousel.js?v=20260612" type="text/javascript"></script>
+<script src="../src/javascript/patrocinadores.js?v=20260612" type="text/javascript"></script>
 <script src="./script.js" type="text/javascript"></script> 
 <!-- ===================================================== -->
 <!--            CONTROLADOR DE GALERÍA (ALPINE)            -->

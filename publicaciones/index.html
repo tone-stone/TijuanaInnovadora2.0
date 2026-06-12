@@ -22,14 +22,19 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
     <!-- SwiperJS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .swiper{overflow:hidden}
+        .swiper-wrapper{display:flex;width:100%;height:100%}
+        .swiper-slide{flex-shrink:0;width:100%;height:100%;position:relative}
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="../../src/styles/fonts.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="../../src/styles/global.css" />
-    <link rel="stylesheet" href="../../src/styles/social-carousel.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="../../src/styles/tailwind.css" />
+    <link rel="stylesheet" href="../../src/styles/fonts.css?v=20260612" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="../../src/styles/global.css?v=20260612" />
+    <link rel="stylesheet" href="../../src/styles/social-carousel.css?v=20260612" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="../../src/styles/tailwind.css?v=20260612" />
 
     <style>
         /* Animaciones personalizadas */
@@ -161,8 +166,8 @@
     </main>
 
     <!-- Scripts -->
-    <script src="../../src/javascript/aos.js"></script>
-    <script src="../../src/javascript/social-carousel.js"></script>
+    <script src="../../src/javascript/aos.js?v=20260612"></script>
+    <script src="../../src/javascript/social-carousel.js?v=20260612"></script>
 
     <script>
         // Inicializar AOS

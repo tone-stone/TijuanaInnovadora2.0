@@ -103,15 +103,21 @@ function initSwiperCarousels() {
             const slides = newsSwiper.slides;
             let visibleCount = 0;
 
-            slides.forEach((slide, index) => {
+            // Leer todos los datos primero para evitar lecturas/escrituras alternadas
+            const slideData = Array.from(slides).map(slide => {
                 const titleEl = slide.querySelector('h2');
                 const esferaEl = slide.querySelector('span.text-sm.font-bold.text-accent.uppercase');
                 const fechaEl = slide.querySelector('p.text-gray-500.text-sm');
+                return {
+                    slide,
+                    title: titleEl ? titleEl.textContent.toLowerCase() : '',
+                    esfera: esferaEl ? esferaEl.textContent.split(' · ')[0].toLowerCase() : '',
+                    fecha: fechaEl ? fechaEl.textContent.match(/(\d{4})/)?.[1] || '' : '',
+                };
+            });
 
-                const title = titleEl ? titleEl.textContent.toLowerCase() : '';
-                const esfera = esferaEl ? esferaEl.textContent.split(' · ')[0].toLowerCase() : '';
-                const fecha = fechaEl ? fechaEl.textContent.match(/(\d{4})/)?.[1] || '' : '';
-
+            // Luego escribir todo de una vez
+            slideData.forEach(({ slide, title, esfera, fecha }) => {
                 const matchesNombre = !nombreFilter || title.includes(nombreFilter);
                 const matchesEsfera = !esferaFilter || esfera.includes(esferaFilter);
                 const matchesFecha = !fechaFilter || fecha === fechaFilter;
@@ -124,18 +130,15 @@ function initSwiperCarousels() {
                 }
             });
 
-            // Actualizar números después del filtro
-            updateSlideNumbers(newsSwiper);
-
             // Si no hay slides visibles, mostrar mensaje
             const wrapper = newsSwiper.wrapperEl;
-            let noResultsEl = wrapper.querySelector('.no-results');
+            const noResultsEl = wrapper.querySelector('.no-results');
             if (visibleCount === 0) {
                 if (!noResultsEl) {
-                    noResultsEl = document.createElement('div');
-                    noResultsEl.className = 'no-results swiper-slide text-center py-12';
-                    noResultsEl.innerHTML = '<p class="text-gray-500 text-lg">No se encontraron noticias que coincidan con los filtros.</p>';
-                    wrapper.appendChild(noResultsEl);
+                    const el = document.createElement('div');
+                    el.className = 'no-results swiper-slide text-center py-12';
+                    el.innerHTML = '<p class="text-gray-500 text-lg">No se encontraron noticias que coincidan con los filtros.</p>';
+                    wrapper.appendChild(el);
                 }
             } else {
                 if (noResultsEl) {
@@ -143,8 +146,11 @@ function initSwiperCarousels() {
                 }
             }
 
-            // Actualizar Swiper
-            newsSwiper.update();
+            // Diferir la actualización de Swiper al siguiente frame para evitar reflow forzado
+            requestAnimationFrame(() => {
+                updateSlideNumbers(newsSwiper);
+                newsSwiper.update();
+            });
         }
 
         // Event listeners para filtros

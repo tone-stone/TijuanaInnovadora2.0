@@ -36,6 +36,7 @@
     <script defer src="./src/javascript/swiper-bundle.min.js?v=20260612"></script>
 
     <!-- Preconexión CDN -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="preconnect" href="https://unpkg.com" crossorigin />
     <!-- Preload Hero LCP -->
@@ -43,7 +44,8 @@
         href="https://res.cloudinary.com/dxxtlfbb4/image/upload/w_1920,h_1080,c_fill/InicioBanner_gzjsvv_yazof7.webp"
         imagesrcset="https://res.cloudinary.com/dxxtlfbb4/image/upload/w_768,h_1280,c_fill/InicioBanner_gzjsvv_yazof7.webp 768w,
                      https://res.cloudinary.com/dxxtlfbb4/image/upload/w_1920,h_1080,c_fill/InicioBanner_gzjsvv_yazof7.webp 1920w"
-        imagesizes="100vw" />
+        imagesizes="100vw"
+        fetchpriority="high" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Tijuana Innovadora | Movimiento ciudadano con impacto global" />
@@ -819,7 +821,7 @@ img {
                     <!-- Imagen editorial izquierda (simula portada de revista, puedes cambiarla por otra relevante) -->
                     <div
                         class="relative min-h-[360px] max-h-[360px] overflow-hidden rounded-2xl shadow-xl border-white/80 group-hover:scale-105 group-hover:-rotate-1 transition duration-500 ease-in-out mb-4">
-                        <img loading="lazy" loading="lazy"
+                        <img loading="lazy"
                             src="https://res.cloudinary.com/dxxtlfbb4/image/upload/f_webp,q_auto,w_900/v1763997588/DonJose_jc4o2d_jffqkv.png"
                             alt="Tijuana Innovadora editorial" class="absolute -top-1/3 md:relative md:h-full md:top-0"
                             data-aos="fade-right" />
@@ -1643,9 +1645,9 @@ img {
                     <!-- Donante -->
                     <div
                         class="max-w-sm mx-auto bg-white/90 rounded-xl shadow-xl border border-accent/10 group hover:-translate-y-2 transition-all duration-300 animate-fade-left p-5 flex flex-col items-center md:min-h-[330px] lg:min-h-[300px]">
-                        <a href="mailto:rigo.dominguez@tijuanainnovadora.com" target="_blank">
+                        <a href="mailto:rigo.dominguez@tijuanainnovadora.com" target="_blank" aria-label="Contactar como Donante">
                             <i
-                                class="fa-solid fa-hand-holding-dollar text-4xl text-[#C49E4F] mb-3 animate-bounce-slow"></i>
+                                class="fa-solid fa-hand-holding-dollar text-4xl text-[#C49E4F] mb-3 animate-bounce-slow" aria-hidden="true"></i>
                         </a>
                         <h4 class="font-quicksand-bold text-xl mb-3 text-accent">Donante</h4>
                         <p class="text-gray-600 text-base font-quicksand-regular lg:text-lg text-center">
@@ -1658,8 +1660,8 @@ img {
                     <!-- Aliado -->
                     <div
                         class="max-w-sm mx-auto bg-white/90 rounded-xl shadow-xl border border-primary/10 group hover:-translate-y-2 transition-all duration-300 animate-fade-up p-5 flex flex-col items-center md:min-h-[330px] lg:min-h-[300px]">
-                        <a href="mailto:rigo.dominguez@tijuanainnovadora.com" target="_blank">
-                            <i class="fa-solid fa-people-arrows text-4xl text-[#005DAA] mb-3 animate-bounce-slow"></i>
+                        <a href="mailto:rigo.dominguez@tijuanainnovadora.com" target="_blank" aria-label="Contactar como Aliado">
+                            <i class="fa-solid fa-people-arrows text-4xl text-[#005DAA] mb-3 animate-bounce-slow" aria-hidden="true"></i>
                         </a>
                         <h4 class="font-quicksand-bold text-xl mb-3 text-primary">Aliado</h4>
                         <p class="text-gray-600 text-base font-quicksand-regular lg:text-lg text-center">
@@ -1672,8 +1674,8 @@ img {
                     <!-- Patrocinador -->
                     <div
                         class="max-w-sm mx-auto bg-white/90 rounded-xl shadow-xl border border-accent/10 group hover:-translate-y-2 transition-all duration-300 animate-fade-right p-5 flex flex-col items-center md:min-h-[330px] lg:min-h-[300px]">
-                        <a href="mailto:rigo.dominguez@tijuanainnovadora.com" target="_blank">
-                            <i class="fa-solid fa-bullhorn text-4xl text-[#C49E4F] mb-3 animate-bounce-slow"></i>
+                        <a href="mailto:rigo.dominguez@tijuanainnovadora.com" target="_blank" aria-label="Contactar como Patrocinador">
+                            <i class="fa-solid fa-bullhorn text-4xl text-[#C49E4F] mb-3 animate-bounce-slow" aria-hidden="true"></i>
                         </a>
                         <h4 class="font-quicksand-bold text-xl mb-3 text-accent">Patrocinador</h4>
                         <p class="text-gray-600 text-base font-quicksand-regular lg:text-lg text-center">
@@ -1685,8 +1687,8 @@ img {
                     <!-- Voluntario -->
                     <div
                         class="max-w-sm mx-auto bg-white/90 rounded-xl shadow-xl border border-primary/10 group hover:-translate-y-2 transition-all duration-300 animate-fade-left delay-100 p-5 flex flex-col items-center md:min-h-[330px] lg:min-h-[300px]">
-                        <a href="mailto:voluntarios@tijuanainnovadora.com" target="_blank">
-                            <i class="fa-solid fa-user-plus text-4xl text-[#005DAA] mb-3 animate-bounce-slow"></i>
+                        <a href="mailto:voluntarios@tijuanainnovadora.com" target="_blank" aria-label="Contactar para Voluntariado">
+                            <i class="fa-solid fa-user-plus text-4xl text-[#005DAA] mb-3 animate-bounce-slow" aria-hidden="true"></i>
                         </a>
                         <h4 class="font-quicksand-bold text-xl mb-3 text-primary">Voluntariado</h4>
                         <p class="text-gray-600 text-base font-quicksand-regular lg:text-lg text-center">
@@ -1698,8 +1700,8 @@ img {
                     <!-- Servicio social -->
                     <div
                         class="max-w-sm mx-auto bg-white/90 rounded-xl shadow-xl border border-accent/10 group hover:-translate-y-2 transition-all duration-300 animate-fade-up delay-150 p-5 flex flex-col items-center md:min-h-[330px] lg:min-h-[300px]">
-                        <a href="mailto:voluntarios@tijuanainnovadora.com" target="_blank">
-                            <i class="fa-solid fa-graduation-cap text-4xl text-[#C49E4F] mb-3 animate-bounce-slow"></i>
+                        <a href="mailto:voluntarios@tijuanainnovadora.com" target="_blank" aria-label="Contactar para Servicio Social">
+                            <i class="fa-solid fa-graduation-cap text-4xl text-[#C49E4F] mb-3 animate-bounce-slow" aria-hidden="true"></i>
                         </a>
                         <h4 class="font-quicksand-bold text-xl mb-3 text-accent">Servicio Social</h4>
                         <p class="text-gray-600 text-base font-quicksand-regular lg:text-lg text-center">
@@ -1711,8 +1713,8 @@ img {
                     <!-- Practicante -->
                     <div
                         class="max-w-sm mx-auto bg-white/90 rounded-xl shadow-xl border border-primary/10 group hover:-translate-y-2 transition-all duration-300 animate-fade-right delay-200 p-5 flex flex-col items-center md:min-h-[330px] lg:min-h-[300px]">
-                        <a href="mailto: voluntarios@tijuanainnovadora.com" target="_blank">
-                            <i class="fa-solid fa-laptop-code text-4xl text-[#005DAA] mb-3 animate-bounce-slow"></i>
+                        <a href="mailto:voluntarios@tijuanainnovadora.com" target="_blank" aria-label="Contactar para Prácticas Profesionales">
+                            <i class="fa-solid fa-laptop-code text-4xl text-[#005DAA] mb-3 animate-bounce-slow" aria-hidden="true"></i>
                         </a>
                         <h4 class="font-quicksand-bold text-xl mb-3 text-primary">Practicas Profesionales</h4>
                         <p class="text-gray-600 text-base font-quicksand-regular lg:text-lg text-center">
@@ -1847,7 +1849,7 @@ img {
                                 Tijuana Innovadora<br />
                                 <span class="text-accent text-xl md:text-4xl">Un movimiento que nos une</span>
                             </h2>
-                            <img loading="lazy" loading="lazy"
+                            <img loading="lazy"
                                 src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997590/CabezaTI_wil1lj_owiwti.png"
                                 class="h-24 w-24 rounded-full shadow-2xl ring-4 ring-highlight/40 border-4 border-white bg-white/80 animate-pulse hover:scale-105 transition duration-300 hidden md:block"
                                 alt="Tijuana Innovadora Logo" />
@@ -1880,10 +1882,41 @@ img {
                             <span
                                 class="absolute top-4 right-4 z-10 bg-gradient-to-r from-[#C49E4F] via-[#005DAA] to-[#C49E4F] text-white font-quicksand-bold px-3 py-1 rounded-full shadow-accent/30 text-xs drop-shadow-xl opacity-90 group-hover:scale-105 transition duration-300">Video
                                 Bienvenida</span>
-                            <iframe class="w-full h-full object-cover" title="Bienvenida Tijuana Innovadora"
-                                frameborder="0" src="https://www.youtube-nocookie.com/embed/zIWCcDEANFA?si=EdDRsExnMW5VS_01"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <!-- Facade: el iframe solo se carga al hacer clic, sin cookies hasta entonces -->
+                            <div class="yt-facade w-full h-full relative cursor-pointer"
+                                 data-videoid="zIWCcDEANFA"
+                                 data-si="EdDRsExnMW5VS_01"
+                                 role="button"
+                                 tabindex="0"
+                                 aria-label="Reproducir video: Bienvenida Tijuana Innovadora">
+                                <img src="https://i.ytimg.com/vi/zIWCcDEANFA/hqdefault.jpg"
+                                     alt="Bienvenida Tijuana Innovadora"
+                                     class="w-full h-full object-cover"
+                                     loading="lazy" />
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors duration-200">
+                                    <svg viewBox="0 0 68 48" width="68" height="48" aria-hidden="true">
+                                        <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/>
+                                        <path d="M 45 24 L 27 14 L 27 34" fill="#fff"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <script>
+                            (function(){
+                                var f=document.currentScript.previousElementSibling;
+                                function load(){
+                                    var iframe=document.createElement('iframe');
+                                    iframe.className='w-full h-full object-cover';
+                                    iframe.title='Bienvenida Tijuana Innovadora';
+                                    iframe.src='https://www.youtube-nocookie.com/embed/'+f.dataset.videoid+'?si='+f.dataset.si+'&autoplay=1';
+                                    iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                                    iframe.referrerPolicy='strict-origin-when-cross-origin';
+                                    iframe.allowFullscreen=true;
+                                    f.parentNode.replaceChild(iframe,f);
+                                }
+                                f.addEventListener('click',load);
+                                f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')load();});
+                            })();
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -2219,6 +2252,7 @@ img {
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3364.466295408347!2d-116.98773329999999!3d32.513691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d94807cdf80915%3A0xe1a43d3b576fd290!2sProl%20Paseo%20de%20los%20Heroes%2010093%2C%2020%20de%20Noviembre%2C%2022100%20Tijuana%2C%20B.C.!5e0!3m2!1ses!2smx!4v1756119906005!5m2!1ses!2smx"
                                 style="border: 0; width: 100%; height: 160px" allowfullscreen=""
+                                loading="lazy"
                                 title="Mapa Tijuana Innovadora"></iframe>
                         </div>
                         <!-- Redes sociales -->

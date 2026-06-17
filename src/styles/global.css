@@ -268,6 +268,15 @@ img {
     }
 }
 
+/* Tap target: todos los bullets Swiper cumplen mínimo 24×24px.
+   padding amplía el área táctil; background-clip preserva el tamaño visual. */
+.swiper-pagination-bullet {
+    padding: 8px !important;
+    background-clip: content-box !important;
+    box-sizing: content-box !important;
+    margin: 0 2px !important;
+}
+
 /* Banner Carousel Styles */
 .banner-swiper {
     width: 100%;

@@ -17,16 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 });
-function changeGallery(year) {
-    const gallery = document.getElementById("timeline-gallery");
-    gallery.style.opacity = 0;
-    setTimeout(() => {
-        gallery.innerHTML = `
-                  <img loading="lazy" src="../src/assets/images/${year}.webp" alt="Foto de ${year}" class="rounded-xl shadow-xl w-full max-h-[500px] object-cover mx-auto">
-                `;
-        gallery.style.opacity = 1;
-    }, 300);
-}
 let swiper;
 
 function changeGallery(year) {
@@ -51,8 +41,7 @@ function changeGallery(year) {
         </div>
       `;
 
-        // Reinit swiper
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             swiper = new Swiper(".mySwiper", {
                 loop: true,
                 pagination: {
@@ -65,7 +54,7 @@ function changeGallery(year) {
                 },
             });
             gallery.style.opacity = 1;
-        }, 50);
+        });
     }, 300);
 }
 

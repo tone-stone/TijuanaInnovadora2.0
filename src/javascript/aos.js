@@ -1,3 +1,2 @@
-document.addEventListener("DOMContentLoaded", () =>
-    AOS.init({ duration: 1200 })
-);
+// AOS is initialized in each page's inline script after window.load
+// to avoid forced reflows during the critical rendering path.

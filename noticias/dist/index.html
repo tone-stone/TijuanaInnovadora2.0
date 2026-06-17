@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es-MX">
 
 <head>
@@ -24,7 +24,11 @@
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => AOS.init({ duration: 1200 }));
+        window.addEventListener('load', function () {
+            requestAnimationFrame(function () {
+                AOS.init({ duration: 800, easing: 'ease-in-out-cubic', once: true });
+            });
+        });
     </script>
 
     <!-- SwiperJS -->
@@ -394,7 +398,7 @@
                                 </div>
                                 <!-- Imagen principal -->
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/noticias/Nota Arte 01 Principal.JPG"
+                                    <img src="/src/assets/images/noticias/Nota Arte 01 Principal.webp"
                                         alt="Inauguración muestra de Arte en la Industria en NewCity Medical"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
@@ -448,25 +452,25 @@
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Arte 01 Principal.JPG" alt="Foto 2"
+                                                    <img src="/src/assets/images/noticias/Nota Arte 01 Principal.webp" alt="Foto 2"
                                                         class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Arte 02.JPG" alt="Foto 1"
+                                                    <img src="/src/assets/images/noticias/Nota Arte 02.webp" alt="Foto 1"
                                                         class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Arte 03.JPG" alt="Foto 2"
+                                                    <img src="/src/assets/images/noticias/Nota Arte 03.webp" alt="Foto 2"
                                                         class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Arte 04.JPG" alt="Foto 3"
+                                                    <img src="/src/assets/images/noticias/Nota Arte 04.webp" alt="Foto 3"
                                                         class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
@@ -499,7 +503,7 @@
                                 </div>
                                 <!-- Imagen principal -->
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/noticias/Nota Sinfonica 01 Principal.JPG"
+                                    <img src="/src/assets/images/noticias/Nota Sinfonica 01 Principal.webp"
                                         alt="Sinfónica Juvenil en el CECUT"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
@@ -544,19 +548,19 @@
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Sinfonica 02.JPG"
+                                                    <img src="/src/assets/images/noticias/Nota Sinfonica 02.webp"
                                                         alt="Foto 1" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Sinfonica 03.JPG"
+                                                    <img src="/src/assets/images/noticias/Nota Sinfonica 03.webp"
                                                         alt="Foto 2" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Arte 01 Principal.JPG"
+                                                    <img src="/src/assets/images/noticias/Nota Arte 01 Principal.webp"
                                                         alt="Foto 3" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
@@ -588,7 +592,7 @@
                                 </div>
                                 <!-- Imagen principal -->
                                 <figure class="overflow-hidden rounded-2xl shadow-xl">
-                                    <img src="/src/assets/images/noticias/Nota Premio 01 Principal.jpeg"
+                                    <img src="/src/assets/images/noticias/Nota Premio 01 Principal.webp"
                                         alt="Embajada de Suiza premia a Iniciativa Río Tijuana"
                                         class="w-full h-[420px] object-cover hover:scale-105 transition duration-700" />
                                 </figure>
@@ -641,19 +645,19 @@
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Premio 02.jpeg"
+                                                    <img src="/src/assets/images/noticias/Nota Premio 02.webp"
                                                         alt="Foto 1" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Premio 03.jpeg"
+                                                    <img src="/src/assets/images/noticias/Nota Premio 03.webp"
                                                         alt="Foto 2" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
                                             <div class="swiper-slide">
                                                 <figure class="overflow-hidden rounded-2xl shadow-lg">
-                                                    <img src="/src/assets/images/noticias/Nota Premio 04.jpeg"
+                                                    <img src="/src/assets/images/noticias/Nota Premio 04.webp"
                                                         alt="Foto 3" class="w-full h-[350px] object-cover" />
                                                 </figure>
                                             </div>
@@ -1019,7 +1023,7 @@
                     <div class="rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden">
                         <div class="overflow-hidden min-h-[10rem] max-h-[10rem] relative">
                             <img loading="lazy"
-                                src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997588/DonJose_jc4o2d_jffqkv.png"
+                                src="https://res.cloudinary.com/dxxtlfbb4/image/upload/f_webp,q_auto,w_900/v1763997588/DonJose_jc4o2d_jffqkv.png"
                                 alt="Hackathon Universitario" class="relative" />
                             <span
                                 class="text-xs mb-3 font-bold uppercase absolute z-[1000] top-4 right-4 rounded-xl bg-white py-1 px-4 text-[#005DAA]">Julio
@@ -1215,7 +1219,7 @@
                                     MODA
                                 </span>
                                 <img loading="lazy"
-                                    src="https://res.cloudinary.com/db1xdn8rq/image/upload/v1773903241/ll3j0i3krlhf5rojk6lp_neoiss.webp"
+                                    src="https://res.cloudinary.com/db1xdn8rq/image/upload/w_1280,q_auto/v1773903241/ll3j0i3krlhf5rojk6lp_neoiss.webp"
                                     alt="Arte y Cultura"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-[#C49E4F]/30 group-hover:scale-105 group-hover:rotate-2 transition-all duration-300" />
                                 <h4
@@ -1245,7 +1249,7 @@
                                     AGORA
                                 </span>
                                 <img loading="lazy"
-                                    src="https://res.cloudinary.com/db1xdn8rq/image/upload/v1773903241/c291yssqcqyu1bdgcgjx_oazysv.webp"
+                                    src="https://res.cloudinary.com/db1xdn8rq/image/upload/w_420,q_auto/v1773903241/c291yssqcqyu1bdgcgjx_oazysv.webp"
                                     alt="Ciencia y Tecnología"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-primary/30 group-hover:scale-105 group-hover:rotate-1 transition-all duration-300" />
                                 <h4
@@ -1273,7 +1277,7 @@
                                     Lideres
                                 </span>
                                 <img loading="lazy"
-                                    src="https://res.cloudinary.com/db1xdn8rq/image/upload/v1773903241/kafwy3y5zo3ijlvm0z2y_epro6r.webp"
+                                    src="https://res.cloudinary.com/db1xdn8rq/image/upload/w_420,q_auto/v1773903241/kafwy3y5zo3ijlvm0z2y_epro6r.webp"
                                     alt="Responsabilidad Social"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-[#C49E4F]/30 group-hover:scale-105 group-hover:-rotate-2 transition-all duration-300" />
                                 <h4
@@ -1303,7 +1307,7 @@
                                     Paseo de la fama
                                 </span>
                                 <img loading="lazy"
-                                    src="https://res.cloudinary.com/db1xdn8rq/image/upload/v1773903243/uuhtsc6qr1infzczr8gt_gz3n8e.webp"
+                                    src="https://res.cloudinary.com/db1xdn8rq/image/upload/w_420,q_auto/v1773903243/uuhtsc6qr1infzczr8gt_gz3n8e.webp"
                                     alt="Arte y Cultura"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-[#C49E4F]/30 group-hover:scale-105 group-hover:rotate-2 transition-all duration-300" />
                                 <h4
@@ -1333,7 +1337,7 @@
                                     Sinfonica Juvenil
                                 </span>
                                 <img loading="lazy"
-                                    src="https://res.cloudinary.com/db1xdn8rq/image/upload/v1773903242/ptllquul0ig1ulywfqyr_n5cows.webp"
+                                    src="https://res.cloudinary.com/db1xdn8rq/image/upload/w_420,q_auto/v1773903242/ptllquul0ig1ulywfqyr_n5cows.webp"
                                     alt="Arte y Cultura"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-[#C49E4F]/30 group-hover:scale-105 group-hover:rotate-2 transition-all duration-300" />
                                 <h4
@@ -1392,7 +1396,7 @@
                         </div>
                         <!-- Imagen decorativa (opcional) -->
                         <img loading="lazy"
-                            src="https://res.cloudinary.com/db1xdn8rq/image/upload/v1773903241/ll3j0i3krlhf5rojk6lp_neoiss.webp"
+                            src="https://res.cloudinary.com/db1xdn8rq/image/upload/w_1280,q_auto/v1773903241/ll3j0i3krlhf5rojk6lp_neoiss.webp"
                             alt="Congreso de Innovación 2025"
                             class="mb-3 shadow-md w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300" />
                         <div class="p-5 text-left">
@@ -1420,7 +1424,7 @@
                                 2026</span>
                         </div>
                         <img loading="lazy"
-                            src="https://res.cloudinary.com/db1xdn8rq/image/upload/v1773903242/ptllquul0ig1ulywfqyr_n5cows.webp"
+                            src="https://res.cloudinary.com/db1xdn8rq/image/upload/w_420,q_auto/v1773903242/ptllquul0ig1ulywfqyr_n5cows.webp"
                             alt="Festival de Arte Urbano"
                             class="mb-3 shadow-md w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300" />
                         <div class="p-5 text-left">

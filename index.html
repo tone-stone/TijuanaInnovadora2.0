@@ -34,12 +34,14 @@
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="preconnect" href="https://unpkg.com" crossorigin />
-    <!-- Preload Hero LCP -->
+    <!-- Preload Hero LCP — mirrors the <picture> breakpoint exactly -->
+    <link rel="preload" as="image"
+        href="https://res.cloudinary.com/dxxtlfbb4/image/upload/w_768,h_1280,c_fill/InicioBanner_gzjsvv_yazof7.webp"
+        media="(max-width: 767px)"
+        fetchpriority="high" />
     <link rel="preload" as="image"
         href="https://res.cloudinary.com/dxxtlfbb4/image/upload/w_1920,h_1080,c_fill/InicioBanner_gzjsvv_yazof7.webp"
-        imagesrcset="https://res.cloudinary.com/dxxtlfbb4/image/upload/w_768,h_1280,c_fill/InicioBanner_gzjsvv_yazof7.webp 768w,
-                     https://res.cloudinary.com/dxxtlfbb4/image/upload/w_1920,h_1080,c_fill/InicioBanner_gzjsvv_yazof7.webp 1920w"
-        imagesizes="100vw"
+        media="(min-width: 768px)"
         fetchpriority="high" />
 
     <!-- Open Graph -->
@@ -642,7 +644,7 @@ img {
                 </div>
 
                 <!-- Panel móvil -->
-                <aside id="mobile-menu"
+                <div id="mobile-menu"
                     class="fixed top-0 right-0 h-screen w-[82%] max-w-sm translate-x-full lg:hidden bg-gradient-to-b from-[#0B0B0B] to-black text-white shadow-2xl transition-transform duration-300 will-change-transform z-[60]"
                     role="dialog" aria-modal="true" aria-labelledby="mobile-title">
                     <div class="flex items-center justify-between p-4 border-b border-white/10">
@@ -729,7 +731,7 @@ img {
                                 alt="English" class="h-5 w-5 rounded-full shadow" />
                         </div>
                     </nav>
-                </aside>
+                </div>
             </header>
 
             <!-- Video de fondo 
@@ -1322,10 +1324,10 @@ img {
                                 </span>
                                 <img loading="lazy" src="./src/assets/images/noticias/insta1.webp" alt="Arte y Cultura"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-[#C49E4F]/30 group-hover:scale-105 group-hover:rotate-2 transition-all duration-300" />
-                                <h4
+                                <h3
                                     class="font-quicksand-bold text-xl text-center text-[#005DAA] mb-2 group-hover:text-accent transition">
                                     Diplomado en Fortalecimiento del Liderazgo
-                                </h4>
+                                </h3>
                                 <p class="text-gray-700 text-base text-center mb-4">
                                     El liderazgo comienza cuando decides creer en tu capacidad de transformar tu
                                     entorno. Cada paso que das hacia tu preparación fortalece tu voz, tu visión y tu
@@ -1351,10 +1353,10 @@ img {
                                 <img loading="lazy" src="./src/assets/images/noticias/insta2.webp"
                                     alt="Ciencia y Tecnología"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-primary/30 group-hover:scale-105 group-hover:rotate-1 transition-all duration-300" />
-                                <h4
+                                <h3
                                     class="font-quicksand-bold text-xl text-[#005DAA] mb-2 group-hover:text-accent transition text-center">
                                     InnovaModa abre su convocatoria para participar en el Concurso de Diseñadores
-                                </h4>
+                                </h3>
                                 <p class="text-gray-700 text-base text-center mb-4">
                                     Un programa que impulsa el talento emergente a través de un circuito educativo
                                     enfocado en creatividad, identidad de marca y profesionalización dentro de la
@@ -1378,10 +1380,10 @@ img {
                                 <img loading="lazy" src="./src/assets/images/noticias/insta3.webp"
                                     alt="Responsabilidad Social"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-[#C49E4F]/30 group-hover:scale-105 group-hover:-rotate-2 transition-all duration-300" />
-                                <h4
+                                <h3
                                     class="font-quicksand-bold text-xl text-[#005DAA] mb-2 group-hover:text-accent transition text-center">
                                     Tijuana continúa consolidándose como un referente internacional en turismo de salud.
-                                </h4>
+                                </h3>
                                 <p class="text-gray-700 text-base text-center mb-4">
                                     El Paseo de la Fama reconocerá a las personalidades que han contribuido a posicionar
                                     a Tijuana como un epicentro de excelencia médica, innovación y liderazgo en
@@ -1407,10 +1409,10 @@ img {
                                     src="https://res.cloudinary.com/db1xdn8rq/image/upload/w_420,q_auto/v1773903243/uuhtsc6qr1infzczr8gt_gz3n8e.webp"
                                     alt="Arte y Cultura"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-[#C49E4F]/30 group-hover:scale-105 group-hover:rotate-2 transition-all duration-300" />
-                                <h4
+                                <h3
                                     class="font-quicksand-bold text-xl text-[#005DAA] mb-2 group-hover:text-accent transition text-center">
                                     Nos honra haber sido invitados al Foro @soymujeractual
-                                </h4>
+                                </h3>
                                 <p class="text-gray-700 text-base text-center mb-4">
                                     Un espacio que celebra el liderazgo, la dedicación y la fuerza de quienes construyen
                                     una mejor región, también se reconoció la trayectoria de nuestros personajes
@@ -1437,10 +1439,10 @@ img {
                                     src="https://res.cloudinary.com/db1xdn8rq/image/upload/w_420,q_auto/v1773903242/ptllquul0ig1ulywfqyr_n5cows.webp"
                                     alt="Arte y Cultura"
                                     class="mb-5 rounded-xl w-32 h-32 object-cover shadow-xl border-4 border-[#C49E4F]/30 group-hover:scale-105 group-hover:rotate-2 transition-all duration-300" />
-                                <h4
+                                <h3
                                     class="font-quicksand-bold text-xl text-[#005DAA] mb-2 group-hover:text-accent transition text-center">
                                     ¿Buscas disciplina, creatividad y confianza?
-                                </h4>
+                                </h3>
                                 <p class="text-gray-700 text-base text-center mb-4">
                                     En la Sinfónica, cada clase es una oportunidad para que niñas, niños y jóvenes
                                     desarrollen disciplina, fortalezcan su autoestima y descubran de lo que son
@@ -1884,7 +1886,7 @@ img {
                                  role="button"
                                  tabindex="0"
                                  aria-label="Reproducir video: Bienvenida Tijuana Innovadora">
-                                <img src="https://i.ytimg.com/vi/zIWCcDEANFA/hqdefault.jpg"
+                                <img src="./src/assets/images/yt-bienvenida.jpg"
                                      alt="Bienvenida Tijuana Innovadora"
                                      class="w-full h-full object-cover"
                                      loading="lazy" />
@@ -2162,7 +2164,7 @@ img {
 
                     <!-- Navegación rápida dinámica -->
                     <div class="animate-fade-in-up delay-100 hidden md:block">
-                        <h4 class="text-accent font-quicksand-bold mb-4 tracking-wide uppercase">Navegación</h4>
+                        <h3 class="text-accent font-quicksand-bold mb-4 tracking-wide uppercase">Navegación</h3>
                         <ul class="space-y-2 text-sm">
                             <li>
                                 <a onclick="return false;" href="#"
@@ -2190,7 +2192,7 @@ img {
                     <!-- Datos de contacto -->
                     <div class="flex flex-row justify-between gap-4 w-full md:block">
                         <div class="animate-fade-in-up delay-100 md:hidden">
-                            <h4 class="text-accent font-quicksand-bold mb-4 tracking-wide uppercase">Navegación</h4>
+                            <h3 class="text-accent font-quicksand-bold mb-4 tracking-wide uppercase">Navegación</h3>
                             <ul class="space-y-2 text-sm">
                                 <li>
                                     <a onclick="return false;" href="#"
@@ -2216,7 +2218,7 @@ img {
                             </ul>
                         </div>
                         <div class="animate-fade-in-up delay-200">
-                            <h4 class="text-accent font-quicksand-bold mb-4 tracking-wide uppercase">Contacto</h4>
+                            <h3 class="text-accent font-quicksand-bold mb-4 tracking-wide uppercase">Contacto</h3>
                             <ul class="space-y-3 text-sm">
                                 <li class="flex items-center gap-2">
                                     <i class="fas fa-phone-alt text-accent"></i>

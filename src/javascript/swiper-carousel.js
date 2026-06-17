@@ -1,6 +1,6 @@
 // Esperar a que Swiper esté disponible
 function initSwiperCarousels() {
-    // Carrusel del Banner Principal
+    // Carrusel del Banner Principal — inicializar primero, en el frame actual
     const bannerEl = document.querySelector(".banner-swiper");
     if (bannerEl && typeof Swiper !== "undefined") {
         new Swiper(".banner-swiper", {
@@ -19,7 +19,9 @@ function initSwiperCarousels() {
         });
     }
 
-    // Carrusel de Impacto (existente)
+    // Carrusel de Impacto — diferir al siguiente frame para no acumular reflows con el banner
+    requestAnimationFrame(() => {
+
     const impactEl = document.querySelector(".impactSwiper");
     if (impactEl && typeof Swiper !== "undefined") {
         new Swiper(".impactSwiper", {
@@ -45,6 +47,8 @@ function initSwiperCarousels() {
             },
         });
     }
+
+    }); // requestAnimationFrame impactSwiper
 
     // Carrusel de noticias completas
     const newsEl = document.querySelector(".newsSwiper");

@@ -17,14 +17,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="./src/assets/font-awesome/css/all.min.css?v=20260612"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
 
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'" />
-    <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script defer src="./src/javascript/aos.js?v=20260612" type="text/javascript"></script>
+    <!-- Scroll animations (IntersectionObserver — no CDN) -->
+    <script defer src="./src/javascript/aos.js?v=20260612"></script>
 
     <!-- SwiperJS -->
     <style>
@@ -2322,23 +2317,6 @@ img {
     <script defer src="./src/javascript/modal.js?v=20260612"></script>
     <script defer src="./src/javascript/social-carousel.js?v=20260612"></script>
 
-    <script>
-        // Swiper (above-the-fold): init on DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', function () {
-            new Swiper('.banner-swiper', {
-                loop: true,
-                speed: 900,
-                grabCursor: true,
-                autoplay: { delay: 5000, disableOnInteraction: false },
-                pagination: { el: '.swiper-pagination', clickable: true },
-            });
-        });
-        // AOS (below-the-fold): defer until after first paint to avoid forced reflow on FCP
-        window.addEventListener('load', function () {
-            requestAnimationFrame(function () {
-                AOS.init({ duration: 800, easing: 'ease-in-out-cubic', once: true });
-            });
-        });
-    </script>
+
 </body>
 </html>

@@ -190,14 +190,19 @@ function initSwiperCarousels() {
     }
 }
 
+// Diferir la inicialización al siguiente frame para evitar reflow forzado en el critical path
+function scheduleInit() {
+    requestAnimationFrame(initSwiperCarousels);
+}
+
 // Intentar inicializar cuando Swiper esté listo
 if (typeof Swiper !== "undefined") {
     // Swiper ya está cargado
     if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initSwiperCarousels);
+        document.addEventListener("DOMContentLoaded", scheduleInit);
     } else {
         // DOM ya está listo
-        initSwiperCarousels();
+        scheduleInit();
     }
 } else {
     // Esperar a que Swiper se cargue
@@ -207,9 +212,9 @@ if (typeof Swiper !== "undefined") {
         if (typeof Swiper !== "undefined") {
             clearInterval(waitForSwiper);
             if (document.readyState === "loading") {
-                document.addEventListener("DOMContentLoaded", initSwiperCarousels);
+                document.addEventListener("DOMContentLoaded", scheduleInit);
             } else {
-                initSwiperCarousels();
+                scheduleInit();
             }
         }
         attempts++;

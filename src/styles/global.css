@@ -1,3 +1,25 @@
+/* Scroll animations — reemplazo nativo de AOS (IntersectionObserver) */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 800ms;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: none;
+}
+[data-aos="fade-up"]    { transform: translateY(30px); }
+[data-aos="fade-down"]  { transform: translateY(-30px); }
+[data-aos="fade-left"]  { transform: translateX(30px); }
+[data-aos="fade-right"] { transform: translateX(-30px); }
+[data-aos="zoom-in"]    { transform: scale(0.9); }
+[data-aos="zoom-in-up"] { transform: scale(0.9) translateY(30px); }
+[data-aos="flip-left"]  { transform: perspective(2500px) rotateY(-100deg); }
+@media (prefers-reduced-motion: reduce) {
+    [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
 *,
 *::before,
 *::after {

@@ -2242,13 +2242,34 @@ img {
                     <!-- Mapa + Redes sociales -->
                     <div
                         class="flex flex-col gap-4 max-w-sm w-full items-center text-center mx-auto lg:mx-0 animate-fade-in-up delay-300">
-                        <!-- Mapa responsivo -->
+                        <!-- Mapa responsivo: facade — el iframe (y maps.gstatic.com) solo carga al hacer clic -->
                         <div class="overflow-hidden rounded-xl shadow-lg ring-2 ring-accent/30 w-full">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3364.466295408347!2d-116.98773329999999!3d32.513691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d94807cdf80915%3A0xe1a43d3b576fd290!2sProl%20Paseo%20de%20los%20Heroes%2010093%2C%2020%20de%20Noviembre%2C%2022100%20Tijuana%2C%20B.C.!5e0!3m2!1ses!2smx!4v1756119906005!5m2!1ses!2smx"
-                                style="border: 0; width: 100%; height: 160px" allowfullscreen=""
-                                loading="lazy"
-                                title="Mapa Tijuana Innovadora"></iframe>
+                            <div class="map-facade w-full relative cursor-pointer"
+                                 style="height:160px;background:#e8eaed;"
+                                 role="button"
+                                 tabindex="0"
+                                 aria-label="Cargar mapa de Tijuana Innovadora">
+                                <div class="absolute inset-0 flex flex-col items-center justify-center gap-2" style="color:#555">
+                                    <i class="fas fa-map-marker-alt" style="font-size:2rem;color:#C49E4F;" aria-hidden="true"></i>
+                                    <p style="font-size:0.7rem;text-align:center;padding:0 1rem;font-weight:600;">Prol. Paseo de los Héroes 10093, Tijuana, B.C.</p>
+                                    <span style="font-size:0.65rem;background:rgba(255,255,255,0.85);padding:3px 10px;border-radius:999px;box-shadow:0 1px 3px rgba(0,0,0,.2);">Toca para ver el mapa</span>
+                                </div>
+                            </div>
+                            <script>
+                            (function(){
+                                var f=document.currentScript.previousElementSibling;
+                                function load(){
+                                    var iframe=document.createElement('iframe');
+                                    iframe.src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3364.466295408347!2d-116.98773329999999!3d32.513691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d94807cdf80915%3A0xe1a43d3b576fd290!2sProl%20Paseo%20de%20los%20Heroes%2010093%2C%2020%20de%20Noviembre%2C%2022100%20Tijuana%2C%20B.C.!5e0!3m2!1ses!2smx!4v1756119906005!5m2!1ses!2smx';
+                                    iframe.style.cssText='border:0;width:100%;height:160px;display:block';
+                                    iframe.allowFullscreen=true;
+                                    iframe.title='Mapa Tijuana Innovadora';
+                                    f.parentNode.replaceChild(iframe,f);
+                                }
+                                f.addEventListener('click',load);
+                                f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')load();});
+                            })();
+                            </script>
                         </div>
                         <!-- Redes sociales -->
                         <div class="flex gap-4 justify-center lg:justify-start w-full mt-2">

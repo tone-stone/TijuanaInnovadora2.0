@@ -3,7 +3,7 @@
  * Maneja el carrusel de publicaciones de redes sociales
  */
 
-document.addEventListener("DOMContentLoaded", function () {
+function initSocialCarousel() {
     // Datos de ejemplo de publicaciones
     const socialPosts = [
         {
@@ -214,4 +214,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return num.toString();
     }
-});
+}
+
+// Social carousel está debajo del fold — diferir al tiempo de inactividad del navegador
+if (window.requestIdleCallback) {
+    requestIdleCallback(initSocialCarousel, { timeout: 4000 });
+} else {
+    setTimeout(initSocialCarousel, 500);
+}

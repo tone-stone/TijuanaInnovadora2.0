@@ -176,7 +176,7 @@ img {
 
 .animate-gradient-x {
     background-size: 200% 200%;
-    animation: animate-gradient-x 5s ease-in-out infinite;
+    background-position: 50% 50%;
 }
 
 /* Fade-in hacia arriba */

@@ -19,36 +19,39 @@ function initSwiperCarousels() {
         });
     }
 
-    // Carrusel de Impacto — diferir al siguiente frame para no acumular reflows con el banner
-    requestAnimationFrame(() => {
-
+    // Carrusel de Impacto — lazy init con IntersectionObserver (está debajo del fold en móvil)
     const impactEl = document.querySelector(".impactSwiper");
     if (impactEl && typeof Swiper !== "undefined") {
-        new Swiper(".impactSwiper", {
-            slidesPerView: 1.15,
-            spaceBetween: 30,
-            loop: true,
-            centeredSlides: true,
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-            },
-            pagination: {
-                el: ".impactSwiper .swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".impactSwiper .swiper-button-next",
-                prevEl: ".impactSwiper .swiper-button-prev",
-            },
-        });
+        const impactObserver = new IntersectionObserver(function(entries) {
+            if (!entries[0].isIntersecting) return;
+            impactObserver.disconnect();
+            requestAnimationFrame(function() {
+                new Swiper(".impactSwiper", {
+                    slidesPerView: 1.15,
+                    spaceBetween: 30,
+                    loop: true,
+                    centeredSlides: true,
+                    autoplay: {
+                        delay: 3500,
+                        disableOnInteraction: false,
+                    },
+                    breakpoints: {
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                    },
+                    pagination: {
+                        el: ".impactSwiper .swiper-pagination",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: ".impactSwiper .swiper-button-next",
+                        prevEl: ".impactSwiper .swiper-button-prev",
+                    },
+                });
+            });
+        }, { threshold: 0.1 });
+        impactObserver.observe(impactEl);
     }
-
-    }); // requestAnimationFrame impactSwiper
 
     // Carrusel de noticias completas
     const newsEl = document.querySelector(".newsSwiper");

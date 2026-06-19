@@ -216,9 +216,19 @@ function initSocialCarousel() {
     }
 }
 
-// Social carousel está debajo del fold — diferir al tiempo de inactividad del navegador
-if (window.requestIdleCallback) {
-    requestIdleCallback(initSocialCarousel, { timeout: 4000 });
-} else {
-    setTimeout(initSocialCarousel, 500);
+// Social carousel: lazy init — solo cuando entra al viewport
+var socialWrapper = document.querySelector(".social-wrapper");
+if (socialWrapper) {
+    var socialInited = false;
+    var socialObserver = new IntersectionObserver(function(entries) {
+        if (!entries[0].isIntersecting || socialInited) return;
+        socialInited = true;
+        socialObserver.disconnect();
+        if (window.requestIdleCallback) {
+            requestIdleCallback(initSocialCarousel, { timeout: 2000 });
+        } else {
+            setTimeout(initSocialCarousel, 0);
+        }
+    }, { threshold: 0.05 });
+    socialObserver.observe(socialWrapper);
 }

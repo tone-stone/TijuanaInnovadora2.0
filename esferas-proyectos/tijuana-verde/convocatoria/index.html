@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convocatoria — Tijuana Verde | Tijuana Innovadora</title>
+    <meta name="description" content="Convocatoria oficial de Tijuana Verde. Descarga y consulta el documento completo." />
+    <meta name="robots" content="noindex" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+        href="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997590/CabezaTI_wil1lj_owiwti.png" />
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #f4f4f4;
+            color: #232323;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        a { text-decoration: none; }
+
+        /* Barra superior */
+        .topbar {
+            background: linear-gradient(135deg, #c4d600 0%, #8fa000 100%);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+        }
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .topbar-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        .topbar-back:hover { opacity: 1; }
+        .topbar-title {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            letter-spacing: 0.06em;
+            color: #fff;
+        }
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            color: #5a6e00;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.55rem 1.25rem;
+            border-radius: 999px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .btn-download:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        }
+
+        /* Visor PDF */
+        .pdf-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #525659;
+        }
+        .pdf-embed {
+            flex: 1;
+            width: 100%;
+            min-height: calc(100vh - 60px);
+            border: none;
+            display: block;
+        }
+
+        /* Fallback (si el navegador no soporta embed de PDF) */
+        .pdf-fallback {
+            display: none;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            color: #fff;
+        }
+        .pdf-fallback p { font-size: 1.1rem; opacity: 0.85; }
+        .btn-fallback-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #c4d600;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.8rem 2rem;
+            border-radius: 999px;
+            transition: transform 0.2s;
+        }
+        .btn-fallback-download:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <!-- ── BARRA SUPERIOR ── -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <a href="../" class="topbar-back">
+                <i class="fas fa-arrow-left"></i>
+                Tijuana Verde
+            </a>
+            <span style="opacity:0.4; font-size:1.2rem;">|</span>
+            <span class="topbar-title">CONVOCATORIA</span>
+        </div>
+        <div class="topbar-actions">
+            <!-- REEMPLAZA "URL_DEL_PDF_AQUI" con la URL real del PDF (Cloudinary u otro host) -->
+            <a href="URL_DEL_PDF_AQUI" download="Convocatoria-TijuanaVerde.pdf" class="btn-download">
+                <i class="fas fa-download"></i>
+                Descargar PDF
+            </a>
+        </div>
+    </div>
+
+    <!-- ── VISOR PDF ── -->
+    <div class="pdf-wrapper">
+        <!--
+            INSTRUCCIONES:
+            Reemplaza "URL_DEL_PDF_AQUI" con la URL pública del PDF.
+            Opciones recomendadas:
+              • Cloudinary: https://res.cloudinary.com/dxxtlfbb4/raw/upload/v.../convocatoria.pdf
+              • Google Drive (vista): https://drive.google.com/file/d/FILE_ID/preview
+        -->
+        <embed
+            src="URL_DEL_PDF_AQUI"
+            type="application/pdf"
+            class="pdf-embed"
+            title="Convocatoria Tijuana Verde"
+        />
+
+        <!-- Fallback si el navegador bloquea el embed -->
+        <div class="pdf-fallback" id="pdf-fallback">
+            <p>Tu navegador no puede mostrar el PDF directamente.</p>
+            <a href="URL_DEL_PDF_AQUI" download="Convocatoria-TijuanaVerde.pdf" class="btn-fallback-download">
+                <i class="fas fa-download"></i>
+                Descargar Convocatoria
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Si el embed falla (móvil, navegador restringido), muestra el fallback
+        const embed = document.querySelector('.pdf-embed');
+        const fallback = document.getElementById('pdf-fallback');
+        if (embed) {
+            embed.addEventListener('error', function () {
+                embed.style.display = 'none';
+                fallback.style.display = 'flex';
+            });
+            // En móvil los embeds de PDF casi nunca funcionan — muestra fallback directo
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                embed.style.display = 'none';
+                fallback.style.display = 'flex';
+            }
+        }
+    </script>
+
+</body>
+</html>

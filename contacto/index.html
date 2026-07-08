@@ -441,13 +441,13 @@ img {
                         <!-- Desktop nav -->
                         <ul class="hidden md:flex gap-6 text-base font-semibold tracking-wide items-center">
                             <li>
-                                <a href="../" class="hover:text-highlight transition duration-200">Inicio</a>
+                                <a href="../" class="hover:text-highlight transition duration-200" data-i18n="nav.inicio">Inicio</a>
                             </li>
                             <li>
-                                <a href="../quienes-somos" class="hover:text-highlight transition duration-200">Quiénes Somos</a>
+                                <a href="../quienes-somos" class="hover:text-highlight transition duration-200" data-i18n="nav.quienes">Quiénes Somos</a>
                             </li>
                             <li>
-                                <a href="../jose-galicot-behar" class="hover:text-highlight transition duration-200">José Galicot</a>
+                                <a href="../jose-galicot-behar" class="hover:text-highlight transition duration-200" data-i18n="nav.galicot">José Galicot</a>
                             </li>
 
                             <li class="relative group">
@@ -477,12 +477,12 @@ img {
                                             <a
                                                 class="block px-4 py-2 hover:bg-white/10 transition"
                                                 href="../esferas-proyectos/arte-industria"
-                                                >Arte en la Industria</a
+                                                data-i18n="nav.arte">Arte en la Industria</a
                                             >
                                         </li>
                                         <li>
                                             <a class="block px-4 py-2 hover:bg-white/10 transition" href="../esferas-proyectos/casa-ideas"
-                                                >Casa de las Ideas</a
+                                                data-i18n="nav.casa">Casa de las Ideas</a
                                             >
                                         </li>
                                         <!-- <li>
@@ -494,7 +494,7 @@ img {
                                         </li> -->
                                         <li>
                                             <a class="block px-4 py-2 hover:bg-white/10 transition" href="../esferas-proyectos/innovamoda"
-                                                >InnovaModa</a
+                                                data-i18n="nav.moda">InnovaModa</a
                                             >
                                         </li>
                                         <!-- <li>
@@ -506,26 +506,26 @@ img {
                                         </li> -->
                                         <li>
                                             <a class="block px-4 py-2 hover:bg-white/10 transition" href="../esferas-proyectos/lideres"
-                                                >Líderes</a
+                                                data-i18n="nav.lideres">Líderes</a
                                             >
                                         </li>
                                         <li>
                                             <a class="block px-4 py-2 hover:bg-white/10 transition" href="../esferas-proyectos/paseo-fama"
-                                                >Paseo de la Fama</a
+                                                data-i18n="nav.paseo">Paseo de la Fama</a
                                             >
                                         </li>
                                         <li>
                                             <a
                                                 class="block px-4 py-2 hover:bg-white/10 transition"
                                                 href="../esferas-proyectos/sinfonica-juvenil"
-                                                >Sinfónica Juvenil</a
+                                                data-i18n="nav.sinfonica">Sinfónica Juvenil</a
                                             >
                                         </li>
                                         <li>
                                             <a
                                                 class="block px-4 py-2 hover:bg-white/10 transition"
                                                 href="../esferas-proyectos/tijuana-verde"
-                                                >Tijuana Verde</a
+                                                data-i18n="nav.verde">Tijuana Verde</a
                                             >
                                         </li>
                                     </ul>
@@ -533,13 +533,13 @@ img {
                             </li>
 
                             <li>
-                                <a href="../eventos/" class="hover:text-highlight transition duration-200">Eventos</a>
+                                <a href="../eventos/" class="hover:text-highlight transition duration-200" data-i18n="nav.eventos">Eventos</a>
                             </li>
                             <li>
-                                <a href="../noticias" class="hover:text-highlight transition duration-200">Noticias</a>
+                                <a href="../noticias" class="hover:text-highlight transition duration-200" data-i18n="nav.noticias">Noticias</a>
                             </li>
                             <li>
-                                <a href="../participa" class="hover:text-highlight transition duration-200">Participa</a>
+                                <a href="../participa" class="hover:text-highlight transition duration-200" data-i18n="nav.participa">Participa</a>
                             </li>
                             <li>
                                 <a
@@ -547,15 +547,14 @@ img {
                                     onclick="return false;"
                                     class="hover:text-highlight transition duration-200 aria-[current=page]:text-highlight hover:cursor-default hover:no-underline"
                                     aria-current="page"
-                                    >Contacto</a
+                                    data-i18n="nav.contacto">Contacto</a
                                 >
                             </li>
                             <li>
-                                <img
-                                    loading="lazy"
-                                    src="../src/assets/images/flags/us.svg"
-                                    alt="English"
-                                    class="h-5 w-5 rounded-full shadow-lg" />
+                                <button onclick="toggleLang()" aria-label="Cambiar idioma" style="background:none;border:0;padding:0;cursor:pointer;display:flex;align-items:center;gap:6px;">
+                                    <img class="lang-flag h-5 w-5 rounded-full shadow-lg" loading="lazy" src="../src/assets/images/flags/us.svg" alt="English" />
+                                    <span class="lang-label" style="font-size:0.7rem;font-weight:700;color:rgba(255,255,255,0.75);letter-spacing:0.05em;">EN</span>
+                                </button>
                             </li>
                         </ul>
 
@@ -586,7 +585,7 @@ img {
                         aria-modal="true"
                         aria-labelledby="mobile-title">
                         <div class="flex items-center justify-between p-4 border-b border-white/10">
-                            <h2 id="mobile-title" class="text-lg font-semibold">Menú</h2>
+                            <h2 id="mobile-title" class="text-lg font-semibold" data-i18n="nav.menu.title">Menú</h2>
                             <button id="btn-close" class="p-2 rounded-lg hover:bg-white/10" aria-label="Cerrar menú">
                                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -595,9 +594,9 @@ img {
                         </div>
 
                         <nav class="p-4 space-y-1">
-                            <a href="../" class="block px-4 py-3 rounded-lg hover:bg-dark/10">Inicio</a>
-                            <a href="../quienes-somos" class="block px-4 py-3 rounded-lg hover:bg-white/10">Quiénes Somos</a>
-                            <a href="../jose-galicot-behar" class="block px-4 py-3 rounded-lg hover:bg-white/10">José Galicot</a>
+                            <a href="../" class="block px-4 py-3 rounded-lg hover:bg-dark/10" data-i18n="nav.inicio">Inicio</a>
+                            <a href="../quienes-somos" class="block px-4 py-3 rounded-lg hover:bg-white/10" data-i18n="nav.quienes">Quiénes Somos</a>
+                            <a href="../jose-galicot-behar" class="block px-4 py-3 rounded-lg hover:bg-white/10" data-i18n="nav.galicot">José Galicot</a>
 
                             <!-- Acordeón Esferas (móvil) -->
                             <details id="acc-esferas" class="group">
@@ -613,12 +612,12 @@ img {
                                 <ul class="mt-1 pl-2">
                                     <li>
                                         <a class="block px-4 py-2 rounded-lg hover:bg-white/10" href="../esferas-proyectos/arte-industria"
-                                            >Arte en la Industria</a
+                                            data-i18n="nav.arte">Arte en la Industria</a
                                         >
                                     </li>
                                     <li>
                                         <a class="block px-4 py-2 rounded-lg hover:bg-white/10" href="../esferas-proyectos/casa-ideas"
-                                            >Casa de las Ideas</a
+                                            data-i18n="nav.casa">Casa de las Ideas</a
                                         >
                                     </li>
                                     <!-- <li>
@@ -630,7 +629,7 @@ img {
                                     </li> -->
                                     <li>
                                         <a class="block px-4 py-2 rounded-lg hover:bg-white/10" href="../esferas-proyectos/innovamoda"
-                                            >InnovaModa</a
+                                            data-i18n="nav.moda">InnovaModa</a
                                         >
                                     </li>
                                     <!-- <li>
@@ -642,45 +641,44 @@ img {
                                     </li> -->
                                     <li>
                                         <a class="block px-4 py-2 rounded-lg hover:bg-white/10" href="../esferas-proyectos/lideres"
-                                            >Líderes</a
+                                            data-i18n="nav.lideres">Líderes</a
                                         >
                                     </li>
                                     <li>
                                         <a class="block px-4 py-2 rounded-lg hover:bg-white/10" href="../esferas-proyectos/paseo-fama"
-                                            >Paseo de la Fama</a
+                                            data-i18n="nav.paseo">Paseo de la Fama</a
                                         >
                                     </li>
                                     <li>
                                         <a
                                             class="block px-4 py-2 rounded-lg hover:bg-white/10"
                                             href="../esferas-proyectos/sinfonica-juvenil"
-                                            >Sinfónica Juvenil</a
+                                            data-i18n="nav.sinfonica">Sinfónica Juvenil</a
                                         >
                                     </li>
                                     <li>
                                         <a class="block px-4 py-2 rounded-lg hover:bg-white/10" href="../esferas-proyectos/tijuana-verde"
-                                            >Tijuana Verde</a
+                                            data-i18n="nav.verde">Tijuana Verde</a
                                         >
                                     </li>
                                 </ul>
                             </details>
 
-                            <a href="../eventos" class="block px-4 py-3 rounded-lg hover:bg-white/10">Eventos</a>
-                            <a href="../participa" class="block px-4 py-3 rounded-lg hover:bg-white/10">Participa</a>
+                            <a href="../eventos" class="block px-4 py-3 rounded-lg hover:bg-white/10" data-i18n="nav.eventos">Eventos</a>
+                            <a href="../participa" class="block px-4 py-3 rounded-lg hover:bg-white/10" data-i18n="nav.participa">Participa</a>
                             <a
                                 href="#"
                                 onclick="return false;"
                                 class="block px-4 py-3 rounded-lg transition duration-200 aria-[current=page]:text-highlight hover:cursor-default hover:no-underline"
                                 aria-current="page"
-                                >Contacto</a
+                                data-i18n="nav.contacto">Contacto</a
                             >
 
                             <div class="px-4 pt-3">
-                                <img
-                                    loading="lazy"
-                                    src="../src/assets/images/flags/us.svg"
-                                    alt="English"
-                                    class="h-5 w-5 rounded-full shadow" />
+                                <button onclick="toggleLang()" aria-label="Cambiar idioma" style="background:none;border:0;padding:0;cursor:pointer;display:flex;align-items:center;gap:8px;color:white;">
+                                    <img class="lang-flag h-5 w-5 rounded-full shadow" loading="lazy" src="../src/assets/images/flags/us.svg" alt="English" />
+                                    <span class="lang-label" style="font-size:0.85rem;font-weight:600;">English</span>
+                                </button>
                             </div>
                         </nav>
                     </aside>
@@ -1259,6 +1257,8 @@ img {
           </div>
 
     </main>
+<script src="../src/javascript/translations.js"></script>
+<script src="../src/javascript/i18n.js"></script>
 </body>
 
 <!-- Scripts -->

@@ -12,10 +12,40 @@ function closeLightbox() {
     document.body.style.overflow = '';
 }
 
-document.addEventListener('keydown', function(e) {
+// Modal de artículos (Visión)
+function openArticulo({ title, images, body }) {
+    const modal = document.getElementById('articulo-modal');
+    document.getElementById('articulo-title').textContent = title;
+
+    const imagesEl = document.getElementById('articulo-images');
+    imagesEl.innerHTML = (images || [])
+        .map(
+            (src) =>
+                `<img src="${src}" alt="${title}" class="w-full h-40 md:h-52 object-cover rounded-xl shadow" />`
+        )
+        .join('');
+
+    const bodyEl = document.getElementById('articulo-body');
+    bodyEl.innerHTML = (body || []).map((p) => `<p>${p}</p>`).join('');
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeArticulo() {
+    const modal = document.getElementById('articulo-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
         closeLightbox();
-        document.getElementById('cta-modal').classList.add('hidden');
+        closeArticulo();
+        const cta = document.getElementById('cta-modal');
+        if (cta) cta.classList.add('hidden');
     }
 });
 

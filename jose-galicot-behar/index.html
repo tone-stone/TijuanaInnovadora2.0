@@ -583,8 +583,7 @@ img{width:100%;display:block;object-fit:cover}
 
 
     <!-- ============================================================
-         4. RECONOCIMIENTOS — 2 filas × 5 fotos con lightbox
-         Reemplaza cada src e img alt con la foto real del reconocimiento
+         4. RECONOCIMIENTOS — Galería con vista previa y PDF
          ============================================================ -->
     <section class="py-16 bg-gradient-to-tr from-[#F4F4F4] via-[#f7f6ef] to-[#e6e9f3] relative overflow-hidden">
         <div class="sm:max-w-lg md:max-w-3xl lg:max-w-6xl mx-auto px-5 md:px-6">
@@ -596,65 +595,141 @@ img{width:100%;display:block;object-fit:cover}
                 </h2>
                 <div class="w-20 h-1 mx-auto mt-3 rounded-full animate-pulse"
                     style="background:linear-gradient(to right,#C49E4F,#005DAA,#C49E4F)"></div>
+                <p class="text-gray-600 mt-4 text-base">Haz clic para ver o descargar cada documento</p>
             </div>
 
-            <!-- Fila 1 -->
-            <div class="grid grid-cols-3 sm:grid-cols-5 gap-3 md:gap-4 mb-4" data-aos="fade-up">
-                <!-- Reemplaza cada src con la foto real del reconocimiento -->
-                <div class="rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                    style="aspect-ratio:1/1" onclick="openLightbox(this)">
-                    <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI-01_vjuz3k_yj9osc.png"
-                        alt="Reconocimiento 1" class="w-full h-full object-cover" />
-                </div>
-                <div class="rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                    style="aspect-ratio:1/1" onclick="openLightbox(this)">
-                    <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI-01_vjuz3k_yj9osc.png"
-                        alt="Reconocimiento 2" class="w-full h-full object-cover" />
-                </div>
-                <div class="rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                    style="aspect-ratio:1/1" onclick="openLightbox(this)">
-                    <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI-01_vjuz3k_yj9osc.png"
-                        alt="Reconocimiento 3" class="w-full h-full object-cover" />
-                </div>
-                <div class="rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                    style="aspect-ratio:1/1" onclick="openLightbox(this)">
-                    <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI-01_vjuz3k_yj9osc.png"
-                        alt="Reconocimiento 4" class="w-full h-full object-cover" />
-                </div>
-                <div class="rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                    style="aspect-ratio:1/1" onclick="openLightbox(this)">
-                    <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI-01_vjuz3k_yj9osc.png"
-                        alt="Reconocimiento 5" class="w-full h-full object-cover" />
-                </div>
-            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4" data-aos="fade-up">
 
-            <!-- Fila 2 -->
-            <div class="grid grid-cols-3 sm:grid-cols-5 gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                    style="aspect-ratio:1/1" onclick="openLightbox(this)">
-                    <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI-01_vjuz3k_yj9osc.png"
-                        alt="Reconocimiento 6" class="w-full h-full object-cover" />
-                </div>
-                <div class="rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                    style="aspect-ratio:1/1" onclick="openLightbox(this)">
-                    <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI-01_vjuz3k_yj9osc.png"
-                        alt="Reconocimiento 7" class="w-full h-full object-cover" />
-                </div>
-                <div class="rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                    style="aspect-ratio:1/1" onclick="openLightbox(this)">
-                    <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI-01_vjuz3k_yj9osc.png"
-                        alt="Reconocimiento 8" class="w-full h-full object-cover" />
-                </div>
-                <div class="rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                    style="aspect-ratio:1/1" onclick="openLightbox(this)">
-                    <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI-01_vjuz3k_yj9osc.png"
-                        alt="Reconocimiento 9" class="w-full h-full object-cover" />
-                </div>
-                <div class="rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                    style="aspect-ratio:1/1" onclick="openLightbox(this)">
-                    <img src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI-01_vjuz3k_yj9osc.png"
-                        alt="Reconocimiento 10" class="w-full h-full object-cover" />
-                </div>
+                <a href="../src/assets/images/jose-galicot/reconocimientos/pdf/20ayuntamiento.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white block"
+                    onclick="openReconocimiento(event, this)">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../src/assets/images/jose-galicot/reconocimientos/20ayuntamiento.jpg"
+                            alt="20 Ayuntamiento de Tijuana"
+                            data-pdf="../src/assets/images/jose-galicot/reconocimientos/pdf/20ayuntamiento.pdf"
+                            class="w-full h-full object-cover object-top" />
+                    </div>
+                    <p class="text-[11px] md:text-xs font-semibold text-center text-[#01426A] px-2 py-2 leading-snug">20 Ayuntamiento de Tijuana</p>
+                </a>
+
+                <a href="../src/assets/images/jose-galicot/reconocimientos/pdf/chulavisa.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white block"
+                    onclick="openReconocimiento(event, this)">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../src/assets/images/jose-galicot/reconocimientos/chulavisa.jpg"
+                            alt="Chula Vista — Día de José Galicot Behar"
+                            data-pdf="../src/assets/images/jose-galicot/reconocimientos/pdf/chulavisa.pdf"
+                            class="w-full h-full object-cover object-top" />
+                    </div>
+                    <p class="text-[11px] md:text-xs font-semibold text-center text-[#01426A] px-2 py-2 leading-snug">Chula Vista</p>
+                </a>
+
+                <a href="../src/assets/images/jose-galicot/reconocimientos/pdf/doctorado-honoriscausa-ort.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white block"
+                    onclick="openReconocimiento(event, this)">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../src/assets/images/jose-galicot/reconocimientos/doctorado-honoriscausa-ort.jpg"
+                            alt="Doctorado Honoris Causa — Universidad ORT México"
+                            data-pdf="../src/assets/images/jose-galicot/reconocimientos/pdf/doctorado-honoriscausa-ort.pdf"
+                            class="w-full h-full object-cover object-top" />
+                    </div>
+                    <p class="text-[11px] md:text-xs font-semibold text-center text-[#01426A] px-2 py-2 leading-snug">Doctorado Honoris Causa ORT</p>
+                </a>
+
+                <a href="../src/assets/images/jose-galicot/reconocimientos/pdf/ejecutivo-distinguido.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white block"
+                    onclick="openReconocimiento(event, this)">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../src/assets/images/jose-galicot/reconocimientos/ejecutivo-distinguido.jpg"
+                            alt="Ejecutivo Distinguido"
+                            data-pdf="../src/assets/images/jose-galicot/reconocimientos/pdf/ejecutivo-distinguido.pdf"
+                            class="w-full h-full object-cover object-top" />
+                    </div>
+                    <p class="text-[11px] md:text-xs font-semibold text-center text-[#01426A] px-2 py-2 leading-snug">Ejecutivo Distinguido</p>
+                </a>
+
+                <a href="../src/assets/images/jose-galicot/reconocimientos/pdf/fundacion-de-artes-musicales.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white block"
+                    onclick="openReconocimiento(event, this)">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../src/assets/images/jose-galicot/reconocimientos/fundacion-de-artes-musicales.jpg"
+                            alt="Fundación de Artes Musicales"
+                            data-pdf="../src/assets/images/jose-galicot/reconocimientos/pdf/fundacion-de-artes-musicales.pdf"
+                            class="w-full h-full object-cover object-top" />
+                    </div>
+                    <p class="text-[11px] md:text-xs font-semibold text-center text-[#01426A] px-2 py-2 leading-snug">Fundación de Artes Musicales</p>
+                </a>
+
+                <a href="../src/assets/images/jose-galicot/reconocimientos/pdf/gobierno-del-estado-de-baja-california.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white block"
+                    onclick="openReconocimiento(event, this)">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../src/assets/images/jose-galicot/reconocimientos/gobierno-del-estado-de-baja-california.jpg"
+                            alt="Gobierno del Estado de Baja California"
+                            data-pdf="../src/assets/images/jose-galicot/reconocimientos/pdf/gobierno-del-estado-de-baja-california.pdf"
+                            class="w-full h-full object-cover object-top" />
+                    </div>
+                    <p class="text-[11px] md:text-xs font-semibold text-center text-[#01426A] px-2 py-2 leading-snug">Gobierno de Baja California</p>
+                </a>
+
+                <a href="../src/assets/images/jose-galicot/reconocimientos/pdf/hombre-del-ano.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white block"
+                    onclick="openReconocimiento(event, this)">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../src/assets/images/jose-galicot/reconocimientos/hombre-del-ano.jpg"
+                            alt="Hombre del Año"
+                            data-pdf="../src/assets/images/jose-galicot/reconocimientos/pdf/hombre-del-ano.pdf"
+                            class="w-full h-full object-cover object-top" />
+                    </div>
+                    <p class="text-[11px] md:text-xs font-semibold text-center text-[#01426A] px-2 py-2 leading-snug">Hombre del Año</p>
+                </a>
+
+                <a href="../src/assets/images/jose-galicot/reconocimientos/pdf/institute-of-the-americas.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white block"
+                    onclick="openReconocimiento(event, this)">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../src/assets/images/jose-galicot/reconocimientos/institute-of-the-americas.jpg"
+                            alt="Institute of the Americas"
+                            data-pdf="../src/assets/images/jose-galicot/reconocimientos/pdf/institute-of-the-americas.pdf"
+                            class="w-full h-full object-cover object-top" />
+                    </div>
+                    <p class="text-[11px] md:text-xs font-semibold text-center text-[#01426A] px-2 py-2 leading-snug">Institute of the Americas</p>
+                </a>
+
+                <a href="../src/assets/images/jose-galicot/reconocimientos/pdf/lead.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white block"
+                    onclick="openReconocimiento(event, this)">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../src/assets/images/jose-galicot/reconocimientos/lead.jpg"
+                            alt="LEAD"
+                            data-pdf="../src/assets/images/jose-galicot/reconocimientos/pdf/lead.pdf"
+                            class="w-full h-full object-cover object-top" />
+                    </div>
+                    <p class="text-[11px] md:text-xs font-semibold text-center text-[#01426A] px-2 py-2 leading-snug">LEAD</p>
+                </a>
+
+                <a href="../src/assets/images/jose-galicot/reconocimientos/pdf/tri.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white block"
+                    onclick="openReconocimiento(event, this)">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../src/assets/images/jose-galicot/reconocimientos/tri.jpg"
+                            alt="TRI"
+                            data-pdf="../src/assets/images/jose-galicot/reconocimientos/pdf/tri.pdf"
+                            class="w-full h-full object-cover object-top" />
+                    </div>
+                    <p class="text-[11px] md:text-xs font-semibold text-center text-[#01426A] px-2 py-2 leading-snug">TRI</p>
+                </a>
+
             </div>
 
         </div>
@@ -863,21 +938,26 @@ img{width:100%;display:block;object-fit:cover}
 
 
     <!-- ============================================================
-         6. CTA — Ir a JoseGalicot.net
+         6. CTA — Sitio oficial José Galicot
          ============================================================ -->
-    <section class="py-20 relative overflow-hidden text-center"
-        style="background:linear-gradient(to top right,#F4F4F4,#f7f6ef,#e6e9f3)">
-        <!-- Glow -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            style="width:60vw;height:30vw;background:linear-gradient(to bottom right,rgba(196,158,79,0.18),rgba(0,93,170,0.10),transparent);filter:blur(60px);border-radius:9999px"></div>
-
-        <div class="relative z-10" data-aos="fade-up">
-            <p class="text-gray-600 text-lg mb-8">Conoce más sobre José Galicot Behar en su sitio oficial</p>
+    <section class="relative overflow-hidden py-16 md:py-24 bg-white">
+        <div class="relative z-10 max-w-4xl mx-auto px-5 md:px-8 text-center">
+            <p class="text-[#C49E4F] text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-4">
+                Sitio oficial
+            </p>
+            <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-5 bg-gradient-to-r from-[#005DAA] via-[#C49E4F] to-[#005DAA] bg-clip-text text-transparent animate-gradient-x">
+                Continúa explorando la trayectoria<br class="hidden sm:block" />
+                de José Galicot Behar
+            </h2>
+            <div class="w-20 h-1 mx-auto mb-6 rounded-full"
+                style="background:linear-gradient(to right,#C49E4F,#005DAA,#C49E4F)"></div>
+            <p class="text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+                Visita su sitio oficial para conocer más sobre su labor cívica, proyectos y pensamiento.
+            </p>
             <a href="https://www.josegalicot.net" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center gap-3 text-white font-bold text-lg shadow-2xl transition-all duration-300 hover:scale-105 rounded-full px-10 py-4"
-                style="background:linear-gradient(to right,#005DAA,#01426A);border:1px solid rgba(0,93,170,0.3);box-shadow:0 10px 40px rgba(0,93,170,0.25)">
-                <i class="fas fa-external-link-alt"></i>
+                class="inline-flex items-center justify-center gap-3 bg-[#C49E4F] hover:bg-[#b38d3f] text-white font-bold text-base md:text-lg rounded-full px-8 md:px-10 py-3.5 md:py-4 shadow-lg transition-colors duration-300">
                 Ir a JoseGalicot.net
+                <i class="fas fa-arrow-up-right-from-square text-sm"></i>
             </a>
         </div>
     </section>
@@ -886,66 +966,100 @@ img{width:100%;display:block;object-fit:cover}
     <!-- ============================================================
          FOOTER
          ============================================================ -->
-    <footer class="relative bg-gradient-to-br from-[#01426A] via-[#0d0d1a] to-[#01426A] text-white pt-20 pb-6 overflow-hidden">
-        <!-- Ola superior SVG -->
-        <div class="absolute top-0 left-0 w-full overflow-hidden rotate-180" style="height:70px">
-            <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
-                style="width:100%;height:100%">
-                <defs>
-                    <linearGradient id="footer-wave-gradient" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stop-color="#C49E4F" />
-                        <stop offset="50%" stop-color="#01426A" />
-                        <stop offset="100%" stop-color="#000000" />
-                    </linearGradient>
-                </defs>
-                <path d="M0,96L48,80C96,64,192,32,288,42.7C384,53,480,107,576,112C672,117,768,75,864,64C960,53,1056,75,1152,80C1248,85,1344,75,1392,69.3L1440,64V0H0Z"
-                    fill="url(#footer-wave-gradient)"></path>
-            </svg>
+    <footer id="footer"
+        class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-black py-16 text-gray-300">
+        <svg class="absolute top-0 left-0 w-full -translate-y-1" viewBox="0 0 1440 150" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="footer-wave-gradient" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#0E1117" />
+                    <stop offset="40%" stop-color="#19223A" />
+                    <stop offset="70%" stop-color="#01426A" />
+                    <stop offset="100%" stop-color="#000000" />
+                </linearGradient>
+            </defs>
+            <path
+                d="M0,96L48,80C96,64,192,32,288,42.7C384,53,480,107,576,112C672,117,768,75,864,64C960,53,1056,75,1152,80C1248,85,1344,75,1392,69.3L1440,64V0H0Z"
+                fill="url(#footer-wave-gradient)"></path>
+        </svg>
+
+        <span
+            class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(196,158,79,0.13)_0,transparent_45%),radial-gradient(circle_at_85%_85%,rgba(0,93,170,0.10)_0,transparent_42%)] z-0"></span>
+
+        <div
+            class="absolute left-1/2 top-2/3 -translate-x-1/2 w-[35vw] h-[35vw] bg-gradient-to-br from-[#C49E4F]/10 via-[#005DAA]/10 to-transparent blur-3xl rounded-full opacity-60 pointer-events-none z-0">
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 justify-items-center lg:justify-items-start">
-                <!-- Logo & Claim -->
-                <div class="flex flex-col items-left text-left max-w-xs w-full mr-auto lg:mx-auto animate-fade-in-up">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 justify-items-center lg:justify-items-start">
+                <div
+                    class="flex flex-col items-left text-left max-w-xs w-full mr-auto lg:mx-auto animate-fade-in-up">
                     <img loading="lazy"
-                        src="https://res.cloudinary.com/dxxtlfbb4/image/upload/v1763997596/LogoTI_gmpqnf_kvkgev.png"
+                        src="https://res.cloudinary.com/dxxtlfbb4/image/upload/f_auto,q_auto,w_700/v1763997596/LogoTI_gmpqnf_kvkgev.png"
                         class="h-20 mb-3 drop-shadow-2xl hover:scale-105 transition duration-300"
                         alt="Tijuana Innovadora logo" />
                     <p class="text-base leading-relaxed mt-2 font-medium text-white/90">
-                        <span class="bg-gradient-to-r from-[#C49E4F] to-[#005DAA] bg-clip-text text-transparent font-extrabold">Tijuana Innovadora</span><br />
+                        <span
+                            class="bg-gradient-to-r from-[#C49E4F] to-[#005DAA] bg-clip-text text-transparent font-extrabold">Tijuana
+                            Innovadora</span>
+                        <br />
                         Somos un movimiento de impacto social, arte y tecnología.
                     </p>
                 </div>
 
-                <!-- Navegación rápida (desktop) -->
                 <div class="animate-fade-in-up delay-100 hidden md:block">
-                    <h4 class="text-accent font-semibold mb-4 tracking-wide uppercase">Navegación</h4>
+                    <h3 class="text-accent font-quicksand-bold mb-4 tracking-wide uppercase">Navegación</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="../" class="hover:text-accent transition font-semibold">Inicio</a></li>
-                        <li><a href="../quienes-somos" class="hover:text-accent transition font-semibold">Quiénes Somos</a></li>
-                        <li><a href="../eventos" class="hover:text-accent transition font-semibold">Eventos</a></li>
-                        <li><a href="../noticias" class="hover:text-accent transition font-semibold">Noticias</a></li>
-                        <li><a href="../participa" class="hover:text-accent transition font-semibold">Participa</a></li>
-                        <li><a href="../contacto" class="hover:text-accent transition font-semibold">Contacto</a></li>
+                        <li>
+                            <a href="../" class="hover:text-accent transition font-semibold">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="../quienes-somos" class="hover:text-accent transition font-semibold">Quienes
+                                somos</a>
+                        </li>
+                        <li>
+                            <a href="../eventos" class="hover:text-accent transition font-semibold">Eventos</a>
+                        </li>
+                        <li>
+                            <a href="../noticias" class="hover:text-accent transition font-semibold">Noticias</a>
+                        </li>
+                        <li>
+                            <a href="../participa" class="hover:text-accent transition font-semibold">Participa</a>
+                        </li>
+                        <li>
+                            <a href="../contacto" class="hover:text-accent transition font-semibold">Contacto</a>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- Contacto -->
                 <div class="flex flex-row justify-between gap-4 w-full md:block">
-                    <!-- Nav móvil -->
                     <div class="animate-fade-in-up delay-100 md:hidden">
-                        <h4 class="text-accent font-semibold mb-4 tracking-wide uppercase">Navegación</h4>
+                        <h3 class="text-accent font-quicksand-bold mb-4 tracking-wide uppercase">Navegación</h3>
                         <ul class="space-y-2 text-sm">
-                            <li><a href="../" class="hover:text-accent transition font-semibold">Inicio</a></li>
-                            <li><a href="../quienes-somos" class="hover:text-accent transition font-semibold">Quiénes Somos</a></li>
-                            <li><a href="../eventos" class="hover:text-accent transition font-semibold">Eventos</a></li>
-                            <li><a href="../noticias" class="hover:text-accent transition font-semibold">Noticias</a></li>
-                            <li><a href="../participa" class="hover:text-accent transition font-semibold">Participa</a></li>
-                            <li><a href="../contacto" class="hover:text-accent transition font-semibold">Contacto</a></li>
+                            <li>
+                                <a href="../" class="hover:text-accent transition font-semibold">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="../quienes-somos" class="hover:text-accent transition font-semibold">Quienes
+                                    somos</a>
+                            </li>
+                            <li>
+                                <a href="../eventos" class="hover:text-accent transition font-semibold">Eventos</a>
+                            </li>
+                            <li>
+                                <a href="../noticias" class="hover:text-accent transition font-semibold">Noticias</a>
+                            </li>
+                            <li>
+                                <a href="../participa"
+                                    class="hover:text-accent transition font-semibold">Participa</a>
+                            </li>
+                            <li>
+                                <a href="../contacto" class="hover:text-accent transition font-semibold">Contacto</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="animate-fade-in-up delay-200">
-                        <h4 class="text-accent font-semibold mb-4 tracking-wide uppercase">Contacto</h4>
+                        <h3 class="text-accent font-quicksand-bold mb-4 tracking-wide uppercase">Contacto</h3>
                         <ul class="space-y-3 text-sm">
                             <li class="flex items-center gap-2">
                                 <i class="fas fa-phone-alt text-accent"></i>
@@ -953,7 +1067,8 @@ img{width:100%;display:block;object-fit:cover}
                             </li>
                             <li class="flex items-center gap-2">
                                 <i class="fas fa-envelope text-accent"></i>
-                                <a href="mailto:info@tijuanainnovadora.com" class="hover:text-accent transition">info@tijuanainnovadora.org</a>
+                                <a href="mailto:info@tijuanainnovadora.com" aria-label="Enviar correo a Tijuana Innovadora"
+                                    class="hover:text-accent transition">info@tijuanainnovadora.org</a>
                             </li>
                             <li class="flex items-center gap-2">
                                 <i class="fas fa-map-marker-alt text-accent"></i>
@@ -967,39 +1082,60 @@ img{width:100%;display:block;object-fit:cover}
                     </div>
                 </div>
 
-                <!-- Mapa + Redes -->
-                <div class="flex flex-col gap-4 max-w-sm w-full items-center text-center mx-auto lg:mx-0 animate-fade-in-up delay-300">
-                    <div class="overflow-hidden rounded-xl shadow-lg w-full" style="ring:2px solid rgba(196,158,79,0.3)">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3364.466295408347!2d-116.98773329999999!3d32.513691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d94807cdf80915%3A0xe1a43d3b576fd290!2sProl%20Paseo%20de%20los%20Heroes%2010093%2C%2020%20de%20Noviembre%2C%2022100%20Tijuana%2C%20B.C.!5e0!3m2!1ses!2smx!4v1756119906005!5m2!1ses!2smx"
-                            style="border:0;width:100%;height:160px" allowfullscreen=""
-                            title="Mapa Tijuana Innovadora"></iframe>
+                <div
+                    class="flex flex-col gap-4 max-w-sm w-full items-center text-center mx-auto lg:mx-0 animate-fade-in-up delay-300">
+                    <div class="overflow-hidden rounded-xl shadow-lg ring-2 ring-accent/30 w-full">
+                        <div class="map-facade w-full relative cursor-pointer"
+                             style="height:160px;background:#e8eaed;"
+                             role="button"
+                             tabindex="0"
+                             aria-label="Cargar mapa de Tijuana Innovadora">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center gap-2" style="color:#555">
+                                <i class="fas fa-map-marker-alt" style="font-size:2rem;color:#C49E4F;" aria-hidden="true"></i>
+                                <p style="font-size:0.7rem;text-align:center;padding:0 1rem;font-weight:600;">Prol. Paseo de los Héroes 10093, Tijuana, B.C.</p>
+                                <span style="font-size:0.65rem;background:rgba(255,255,255,0.85);padding:3px 10px;border-radius:999px;box-shadow:0 1px 3px rgba(0,0,0,.2);">Toca para ver el mapa</span>
+                            </div>
+                        </div>
+                        <script>
+                        (function(){
+                            var f=document.currentScript.previousElementSibling;
+                            function load(){
+                                var iframe=document.createElement('iframe');
+                                iframe.src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3364.466295408347!2d-116.98773329999999!3d32.513691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d94807cdf80915%3A0xe1a43d3b576fd290!2sProl%20Paseo%20de%20los%20Heroes%2010093%2C%2020%20de%20Noviembre%2C%2022100%20Tijuana%2C%20B.C.!5e0!3m2!1ses!2smx!4v1756119906005!5m2!1ses!2smx';
+                                iframe.style.cssText='border:0;width:100%;height:160px;display:block';
+                                iframe.allowFullscreen=true;
+                                iframe.title='Mapa Tijuana Innovadora';
+                                f.parentNode.replaceChild(iframe,f);
+                            }
+                            f.addEventListener('click',load);
+                            f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')load();});
+                        })();
+                        </script>
                     </div>
                     <div class="flex gap-4 justify-center lg:justify-start w-full mt-2">
                         <a href="https://www.facebook.com/TjInnovadora" target="_blank"
-                            class="social-btn hover:scale-110 transition" aria-label="Facebook">
-                            <i class="fab fa-facebook-f text-xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/tjinnovadora/" target="_blank"
-                            class="social-btn hover:scale-110 transition" aria-label="Instagram">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
+                            class="social-btn hover:scale-110 transition" aria-label="Facebook"><i
+                                class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="https://www.instagram.com/tjinnovadora/" aria-label="Síguenos en Instagram" target="_blank"
+                            class="social-btn hover:scale-110 transition"><i
+                                class="fab fa-instagram text-xl"></i></a>
                         <a href="https://www.youtube.com/@TijuanaInnovadoraOficial" target="_blank"
-                            class="social-btn hover:scale-110 transition" aria-label="YouTube">
-                            <i class="fab fa-youtube text-xl"></i>
-                        </a>
+                            class="social-btn hover:scale-110 transition" aria-label="YouTube"><i
+                                class="fab fa-youtube text-xl"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Línea inferior -->
-            <div class="mt-12 border-t pt-6 text-center text-xs text-gray-400 relative" style="border-color:rgba(196,158,79,0.3)">
-                <span class="block mb-1 tracking-wide font-semibold text-accent animate-gradient-x">Juntos transformamos Tijuana</span>
+            <div class="mt-12 border-t border-accent/30 pt-6 text-center text-xs text-gray-400 relative">
+                <span class="block mb-1 tracking-wide font-semibold text-accent animate-gradient-x">Juntos
+                    transformamos Tijuana</span>
                 © 2025 Tijuana Innovadora – Todos los derechos reservados.
             </div>
             <div class="flex justify-center mt-2">
-                <a href="../src/assets/images/AVISO DE PRIVACIDAD INTEGRAL.pdf" target="_blank"
-                    class="text-gray-300 hover:text-yellow-600 transition">Aviso de Privacidad</a>
+                <a href="../src/assets/images/AVISO DE PRIVACIDAD INTEGRAL - TIJUANA INNOVADORA 2026.pdf" target="_blank"
+                    class="text-gray-300 hover:text-yellow-600 transition">
+                    Aviso de Privacidad
+                </a>
             </div>
         </div>
     </footer>
@@ -1038,16 +1174,21 @@ img{width:100%;display:block;object-fit:cover}
      LIGHTBOX — Reconocimientos
      ============================================================ -->
 <div id="lightbox"
-    class="fixed inset-0 z-50 flex items-center justify-center hidden"
+    class="fixed inset-0 z-50 flex flex-col items-center justify-center hidden p-4"
     style="background:rgba(0,0,0,0.92)"
-    onclick="closeLightbox()">
+    onclick="if(event.target===this)closeLightbox()">
     <button class="absolute top-4 right-6 text-white text-4xl font-bold transition"
         style="z-index:60;line-height:1" onclick="closeLightbox()" aria-label="Cerrar">
         &times;
     </button>
     <img id="lightbox-img" src="" alt=""
         class="object-contain rounded-xl shadow-2xl"
-        style="max-width:90vw;max-height:85vh" />
+        style="max-width:90vw;max-height:75vh" />
+    <a id="lightbox-pdf" href="#" target="_blank" rel="noopener noreferrer"
+        class="mt-4 inline-flex items-center gap-2 px-6 py-2 rounded-full text-white font-semibold shadow-lg transition hover:scale-105"
+        style="background:#C49E4F">
+        <i class="fas fa-file-pdf"></i> Ver documento PDF
+    </a>
 </div>
 
 

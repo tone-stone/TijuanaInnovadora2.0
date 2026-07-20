@@ -3,8 +3,23 @@ function openLightbox(el) {
     const img = el.querySelector('img');
     document.getElementById('lightbox-img').src = img.src;
     document.getElementById('lightbox-img').alt = img.alt;
+    const pdfLink = document.getElementById('lightbox-pdf');
+    const pdf = img.getAttribute('data-pdf');
+    if (pdfLink) {
+        if (pdf) {
+            pdfLink.href = pdf;
+            pdfLink.classList.remove('hidden');
+        } else {
+            pdfLink.classList.add('hidden');
+        }
+    }
     document.getElementById('lightbox').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+}
+
+function openReconocimiento(event, el) {
+    event.preventDefault();
+    openLightbox(el);
 }
 
 function closeLightbox() {

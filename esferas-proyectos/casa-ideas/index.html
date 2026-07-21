@@ -838,7 +838,7 @@ img {
         </section>
 
          <!--Galeria -->
-        <section id="galeria" x-data="galerias()" class="py-16 bg-gray-50">
+        <section id="galeria" x-data="galerias()" class="py-16 bg-gray-50 overflow-hidden">
             <div class="max-w-6xl mx-auto px-6">
 
                 <h2 class="text-4xl font-bold text-blue-900 mb-14 text-center">
@@ -847,7 +847,7 @@ img {
 
                 <!-- Render de catálogos -->
                 <template x-for="(galeria, gIndex) in galerias" :key="gIndex">
-                    <div class="mb-20">
+                    <div class="mb-16 last:mb-0">
 
                         <!-- Título -->
                         <h3 class="text-2xl font-semibold text-blue-800 mb-6 border-l-4 border-yellow-500 pl-3">
@@ -855,19 +855,49 @@ img {
                             <span x-text="galeria.anio"></span>
                         </h3>
 
-                        <!-- Grid -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                            <template x-for="(foto, fIndex) in galeria.fotos" :key="fIndex">
-                                <div class="group relative overflow-hidden rounded-xl shadow-lg bg-white cursor-pointer"
-                                    @click="abrirGaleria(galeria.fotos, fIndex)">
-                                    <img :src="foto.src"
-                                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                                    <div
-                                        class="absolute inset-0 bg-blue-900/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                                        <p class="text-white text-lg font-semibold">Ver foto</p>
-                                    </div>
+                        <!-- Carrusel horizontal -->
+                        <div class="relative px-1 md:px-11">
+                            <div class="gallery-swiper swiper !overflow-visible md:!overflow-hidden"
+                                x-init="$nextTick(() => {
+                                    new Swiper($el, {
+                                        slidesPerView: 'auto',
+                                        spaceBetween: 20,
+                                        freeMode: { enabled: true, sticky: false },
+                                        grabCursor: true,
+                                        scrollbar: {
+                                            el: $el.querySelector('.swiper-scrollbar'),
+                                            draggable: true,
+                                        },
+                                    });
+                                })">
+                                <div class="swiper-wrapper">
+                                    <template x-for="(foto, fIndex) in galeria.fotos" :key="fIndex">
+                                        <div class="swiper-slide !w-[220px] sm:!w-[260px] md:!w-[300px]">
+                                            <div class="group relative overflow-hidden rounded-xl shadow-lg bg-white cursor-pointer"
+                                                @click="abrirGaleria(galeria.fotos, fIndex)">
+                                                <img :src="foto.src" loading="lazy" decoding="async"
+                                                    width="300" height="256"
+                                                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                                                <div
+                                                    class="absolute inset-0 bg-blue-900/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                                    <p class="text-white text-lg font-semibold">Ver foto</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
                                 </div>
-                            </template>
+                                <div class="swiper-scrollbar !bottom-0 !h-1.5 md:!static md:!mt-5 !bg-blue-900/10"></div>
+                            </div>
+
+                            <!-- Flechas (solo escritorio) -->
+                            <div class="swiper-button-prev-custom hidden md:flex absolute left-0 top-[104px] -translate-x-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-lg items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white transition cursor-pointer"
+                                @click="$el.parentElement.querySelector('.gallery-swiper').swiper.slidePrev()">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </div>
+                            <div class="swiper-button-next-custom hidden md:flex absolute right-0 top-[104px] translate-x-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-lg items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white transition cursor-pointer"
+                                @click="$el.parentElement.querySelector('.gallery-swiper').swiper.slideNext()">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
                         </div>
 
                     </div>
@@ -885,10 +915,10 @@ img {
                         &times;
                     </button>
 
-                    <img :src="galeriaActual[indice].src"
+                    <img :src="galeriaActual[indice]?.src"
                         class="w-full max-h-[80vh] object-contain rounded-lg shadow-2xl">
 
-                    <p class="text-white mt-4 text-lg" x-text="galeriaActual[indice].desc">
+                    <p class="text-white mt-4 text-lg" x-text="galeriaActual[indice]?.desc">
                     </p>
 
                     <button @click="anterior()"
@@ -1806,79 +1836,79 @@ img {
                     anio: '2026',
                     fotos: [
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-01.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-01.webp',
                             desc: 'Taller creativo en Casa de las Ideas'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-02.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-02.webp',
                             desc: 'Actividad artística comunitaria'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-03.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-03.webp',
                             desc: 'Participantes en taller creativo'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-dibujo-tortuga.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-dibujo-tortuga.webp',
                             desc: 'Taller de dibujo'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-fotografia-collage.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-fotografia-collage.webp',
                             desc: 'Taller de fotografía y collage'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-escritura-creativa-01.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-escritura-creativa-01.webp',
                             desc: 'Taller de escritura creativa'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-escritura-creativa-02.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-escritura-creativa-02.webp',
                             desc: 'Taller de escritura creativa'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-collage.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-collage.webp',
                             desc: 'Taller de collage'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-pintura-mascara.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-pintura-mascara.webp',
                             desc: 'Taller de pintura'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-01.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-01.webp',
                             desc: 'Taller de ajedrez'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-02.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-02.webp',
                             desc: 'Taller de ajedrez'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-03.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-03.webp',
                             desc: 'Taller de ajedrez'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-04.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-04.webp',
                             desc: 'Taller de ajedrez'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-movimiento-01.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-movimiento-01.webp',
                             desc: 'Taller de movimiento'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-05.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-05.webp',
                             desc: 'Taller de ajedrez'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-06.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-06.webp',
                             desc: 'Taller de ajedrez'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-movimiento-02.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-movimiento-02.webp',
                             desc: 'Taller de movimiento'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-movimiento-03.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-movimiento-03.webp',
                             desc: 'Taller de movimiento'
                         },
                         {
-                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-07.png',
+                            src: '../../src/assets/images/casa-ideas/galeria/taller-ajedrez-07.webp',
                             desc: 'Taller de ajedrez'
                         }
                     ]
@@ -1888,27 +1918,27 @@ img {
                     anio: '',
                     fotos: [
                         {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768950666/campamento_aiqigm.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768950666/campamento_aiqigm.webp',
                             desc: 'Muestra artística 2025'
                         },
                          {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768950664/SAM_0816_ud8abk.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768950664/SAM_0816_ud8abk.webp',
                             desc: 'Evento Arte en la Industria 2024'
                         },
                         {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768950662/SAM_0817_qiuz7z.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768950662/SAM_0817_qiuz7z.webp',
                             desc: 'Exposición cultural'
                         },
                          {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768950660/SAM_0830_irps2n.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768950660/SAM_0830_irps2n.webp',
                             desc: 'Evento Arte en la Industria 2024'
                         },
                         {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768950658/SAM_0923_tglik0.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768950658/SAM_0923_tglik0.webp',
                             desc: 'Exposición cultural'
                         },
                          {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768950657/SAM_1088_sgjgoa.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768950657/SAM_1088_sgjgoa.webp',
                             desc: 'Exposición cultural'
                         }
                     ]
@@ -1918,27 +1948,27 @@ img {
                     anio: '',
                     fotos: [
                         {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768951031/IMG_20170728_121443_gz4xdk.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768951031/IMG_20170728_121443_gz4xdk.webp',
                             desc: 'Muestra artística 2025'
                         },
                          {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768951029/IMG_20170728_121447_a6bpzk.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768951029/IMG_20170728_121447_a6bpzk.webp',
                             desc: 'Evento Arte en la Industria 2024'
                         },
                         {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768951027/IMG_20180718_123003_ywsf8t.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768951027/IMG_20180718_123003_ywsf8t.webp',
                             desc: 'Exposición cultural'
                         },
                          {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768951024/IMG_20170728_121422_ag2xqx.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768951024/IMG_20170728_121422_ag2xqx.webp',
                             desc: 'Evento Arte en la Industria 2024'
                         },
                         {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768951023/IMG_20170728_121427_v8s2r0.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768951023/IMG_20170728_121427_v8s2r0.webp',
                             desc: 'Exposición cultural'
                         },
                          {
-                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/v1768951021/IMG_20170728_121405_abdra6.webp',
+                            src: 'https://res.cloudinary.com/db1xdn8rq/image/upload/f_auto,q_auto,w_900/v1768951021/IMG_20170728_121405_abdra6.webp',
                             desc: 'Exposición cultural'
                         }
                     ]

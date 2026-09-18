@@ -90,47 +90,22 @@
             box-shadow: 0 4px 16px rgba(0,0,0,0.18);
         }
 
-        /* Visor PDF */
-        .pdf-wrapper {
+        /* Visor de imagen */
+        .img-wrapper {
             flex: 1;
             display: flex;
-            flex-direction: column;
-            background: #525659;
-        }
-        .pdf-embed {
-            flex: 1;
-            width: 100%;
-            min-height: calc(100vh - 60px);
-            border: none;
-            display: block;
-        }
-
-        /* Fallback (si el navegador no soporta embed de PDF) */
-        .pdf-fallback {
-            display: none;
-            flex: 1;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
-            flex-direction: column;
-            gap: 1.5rem;
-            padding: 3rem 1.5rem;
-            text-align: center;
-            color: #fff;
+            background: #525659;
+            padding: 2rem 1rem;
         }
-        .pdf-fallback p { font-size: 1.1rem; opacity: 0.85; }
-        .btn-fallback-download {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #c4d600;
-            color: #fff;
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 0.8rem 2rem;
-            border-radius: 999px;
-            transition: transform 0.2s;
+        .img-convocatoria {
+            width: 100%;
+            max-width: 720px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.35);
         }
-        .btn-fallback-download:hover { transform: translateY(-2px); }
     </style>
 </head>
 <body>
@@ -146,48 +121,21 @@
             <span class="topbar-title">CONVOCATORIA</span>
         </div>
         <div class="topbar-actions">
-            <a href="https://drive.google.com/uc?export=download&id=1GS5VEndxf2d9p9oplVoLwjTO-dBjwTqx" download="Convocatoria-TijuanaVerde.pdf" class="btn-download">
+            <a href="../../../src/assets/images/tijuana-verde/convocatoria-2026.webp" download="Convocatoria-TijuanaVerde-2026.webp" class="btn-download">
                 <i class="fas fa-download"></i>
-                Descargar PDF
+                Descargar imagen
             </a>
         </div>
     </div>
 
-    <!-- ── VISOR PDF ── -->
-    <div class="pdf-wrapper">
-        <embed
-            src="https://drive.google.com/file/d/1GS5VEndxf2d9p9oplVoLwjTO-dBjwTqx/preview"
-            type="application/pdf"
-            class="pdf-embed"
-            title="Convocatoria Tijuana Verde"
+    <!-- ── VISOR DE IMAGEN ── -->
+    <div class="img-wrapper">
+        <img
+            src="../../../src/assets/images/tijuana-verde/convocatoria-2026.webp"
+            alt="Convocatoria XI Feria Ambiental Académica 2026 — Tijuana Verde"
+            class="img-convocatoria"
         />
-
-        <!-- Fallback si el navegador bloquea el embed -->
-        <div class="pdf-fallback" id="pdf-fallback">
-            <p>Tu navegador no puede mostrar el PDF directamente.</p>
-            <a href="https://drive.google.com/uc?export=download&id=1GS5VEndxf2d9p9oplVoLwjTO-dBjwTqx" download="Convocatoria-TijuanaVerde.pdf" class="btn-fallback-download">
-                <i class="fas fa-download"></i>
-                Descargar Convocatoria
-            </a>
-        </div>
     </div>
-
-    <script>
-        // Si el embed falla (móvil, navegador restringido), muestra el fallback
-        const embed = document.querySelector('.pdf-embed');
-        const fallback = document.getElementById('pdf-fallback');
-        if (embed) {
-            embed.addEventListener('error', function () {
-                embed.style.display = 'none';
-                fallback.style.display = 'flex';
-            });
-            // En móvil los embeds de PDF casi nunca funcionan — muestra fallback directo
-            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                embed.style.display = 'none';
-                fallback.style.display = 'flex';
-            }
-        }
-    </script>
 
 </body>
 </html>
